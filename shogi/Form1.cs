@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace shogi
 {
-    public partial class Form1 : Form
+    public partial class menu : Form
     {
-        public Form1()
+        public menu()
         {
             InitializeComponent();
+        }
+
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+            form_board formBoard = new form_board();
+            formBoard.FormClosed += new FormClosedEventHandler(gameClosed);
+            formBoard.Show();
+            this.Hide();
+        }
+        private void gameClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }
