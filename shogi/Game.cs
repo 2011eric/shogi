@@ -9,12 +9,12 @@ using shogi.ChessPieces;
 namespace shogi
 {
     /*
-    public struct pos
+    public struct Point
     {
         public int X { get; }
         public int Y { get; }
 
-        public pos(int x, int y)
+        public Point(int x, int y)
         {
             X = x;
             Y = y;
@@ -28,7 +28,7 @@ namespace shogi
             }
             else
             {
-                pos p = (pos)obj;
+                Point p = (Point)obj;
                 return (X == p.X) && (Y == p.Y);
             }
         }
@@ -76,8 +76,8 @@ namespace shogi
             bool finished = false;
             while (!finished)
             {
-                pos Pos = calcInputPos();
-                if(Pos.X > 0 && Pos.X <10 && Pos.Y >0 && Pos.Y <10)
+                Point Point = calcInputPoint();
+                if(Point.X > 0 && Point.X <10 && Point.Y >0 && Point.Y <10)
                 {
                  
                 }
@@ -85,15 +85,15 @@ namespace shogi
             }
             return;
         } 
-        private pos calcInputPos()
+        private Point calcInputPoint()
         {
-            pos clickPos = new pos();
-            //TODO: Convert mouse pos to board pos when board is clicked.
-            return clickPos;
+            Point clickPoint = new Point();
+            //TODO: Convert mouse Point to board Point when board is clicked.
+            return clickPoint;
         }
         public static ChessPiece GetChessPiece(Point index)
         {
-            return board[index.X, index.Y];
+            //return board[index.X, index.Y];
         } 
     }
        
