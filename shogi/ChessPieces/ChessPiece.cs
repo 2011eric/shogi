@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace shogi
 {
-    public abstract class Piece : PictureBox
+    public abstract class ChessPiece : PictureBox
     {
-        public Piece(pos init)
+        public ChessPiece(pos init)
         {
 
         }

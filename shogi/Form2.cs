@@ -18,7 +18,7 @@ namespace shogi
             InitializeComponent();
         }
         //Controls
-        private Chess
+        private ChessPiece king = new ChessPiece();
         private void form_board_Load(object sender, EventArgs e)
         {
             this.pictureBox1.Parent = picture_board;

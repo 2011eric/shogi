@@ -9,8 +9,8 @@ namespace shogi
     public class Player
     {
         public string role;
-        private Piece[] piecesAlive;
-        private Piece[] piecesDead;
+        private ChessPiece[] piecesAlive;
+        private ChessPiece[] piecesDead;
 
         public Player(string role)
         {
