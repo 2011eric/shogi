@@ -18,7 +18,7 @@ namespace shogi
         public form_board()
         {
             InitializeComponent();
-            Hisha test = new Hisha(new pos(1, 1));
+            Hisha test = new Hisha(new Point(1, 1));
             test.Upgrade();     
             foreach(pos i in test.possibleMove(new pos(5,5)))
             {

@@ -10,10 +10,16 @@ namespace shogi
 {
     public abstract partial class ChessPiece : PictureBox
     {
-       
-        public ChessPiece(pos init) { }
+        public String type { get; }
+        public String player { get; }
+ 
+        public ChessPiece(Point init,String player,String type) {
+            this.player = player;
+            this.type = type;
+        }
+
         
 
-        public abstract List<pos> possibleMove(pos current);
+        public abstract List<Point> possibleMove(Point current);
     }
 }

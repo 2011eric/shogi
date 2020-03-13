@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using shogi.ChessPieces;
 
 namespace shogi
 {
+    /*
     public struct pos
     {
         public int X { get; }
@@ -32,19 +35,34 @@ namespace shogi
 
         public override string ToString() => $"({X}, {Y})";
     }
-
+    */
     public class Game
     {
         
         private int currentPlayer;
-        private ChessPiece[,] board;
+        private ChessPiece[,] board = new ChessPiece[9, 9];
         public Game()
         {
-            board = new ChessPiece[9, 9];
+           
             Player[] playerList = new Player[2];
             playerList[0] = new Player("first");
             playerList[1] = new Player("second");
             currentPlayer = 0;
+            
+        }
+        private void SpawnPieces(string player)
+        {
+            if (player == "first")
+            {
+                Board.board[5, 9] = new Gyukusho(new Point(5, 9), player);
+
+            }
+            else
+            {
+                Board.board[1, 9] = new Gyukusho(new Point(5, 9), player);
+            }
+            
+
         }
         public void Start() {
             while (true)
@@ -73,11 +91,11 @@ namespace shogi
             //TODO: Convert mouse pos to board pos when board is clicked.
             return clickPos;
         }
-        public ChessPiece GetChessPiece(pos index)
+        public static ChessPiece GetChessPiece(Point index)
         {
             return board[index.X, index.Y];
         } 
     }
        
-    }
+    
 }

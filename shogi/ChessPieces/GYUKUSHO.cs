@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace shogi.ChessPieces
 {
     class Gyukusho : ChessPiece
     {
-        public Gyukusho(pos init) : base(init)
+        public Gyukusho(Point init, string player) : base(init, player, "Gyukusho")
         {
 
         }

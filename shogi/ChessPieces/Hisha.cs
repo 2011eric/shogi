@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Drawing;
 namespace shogi.ChessPieces
 {
     
@@ -11,8 +11,9 @@ namespace shogi.ChessPieces
     {
         public string player { get; }
         public bool upgraded { get; set; }
-        public Hisha(pos init) : base(init)
+        public Hisha(Point init,string player) : base(init,player,"Hisha")
         {
+            
             this.upgraded = false;
         }
         pos[] upgradedMoves = new pos[8] { new pos(1,-1), new pos(0,-1), new pos(-1,-1),
