@@ -8,16 +8,39 @@ namespace shogi
 {
     public struct pos
     {
-        public int x;
-        public int y;
-    };
+        public int X { get; }
+        public int Y { get; }
+
+        public pos(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+        public override bool Equals(Object obj)
+        {
+            //Check for null and compare run-time types.
+            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                pos p = (pos)obj;
+                return (X == p.X) && (Y == p.Y);
+            }
+        }
+
+        public override string ToString() => $"({X}, {Y})";
+    }
 
     public class Game
     {
         
         private int currentPlayer;
+        public ChessPiece[,] board;
         public Game()
         {
+            board = new ChessPiece[9, 9];
             Player[] playerList = new Player[2];
             playerList[0] = new Player("first");
             playerList[1] = new Player("second");
@@ -36,7 +59,7 @@ namespace shogi
             while (!finished)
             {
                 pos Pos = calcInputPos();
-                if(Pos.x > 0 && Pos.x <10 && Pos.y >0 && Pos.y <10)
+                if(Pos.X > 0 && Pos.X <10 && Pos.Y >0 && Pos.Y <10)
                 {
                  
                 }
@@ -50,10 +73,6 @@ namespace shogi
             //TODO: Convert mouse pos to board pos when board is clicked.
             return clickPos;
         }
-        private void showPosibleMove(pos[] positions)
-        {
-            //TODO: Show all positions
-            return;
-        }
+       
     }
 }

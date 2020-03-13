@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using shogi;
+using shogi.ChessPieces;
 
 namespace shogi
 {
@@ -16,13 +18,37 @@ namespace shogi
         public form_board()
         {
             InitializeComponent();
+            Hisha test = new Hisha(new pos(1, 1));
+            test.Upgrade();     
+            /*foreach(pos i in test.possibleMove(new pos(5,5)))
+            {
+                MessageBox.Show(i.ToString());
+            }*/
+           
+       
+            
+            this.picture_board.Controls.Add(test);
+
+            test.BackColor = System.Drawing.Color.Transparent;
+            test.Image = global::shogi.Properties.Resources.銀;
+            test.Location = new System.Drawing.Point(136, 512);
+            
+            test.Size = new System.Drawing.Size(133, 67);
+            test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+           
+
+
+
+
+
         }
-        //Controls
-        private ChessPiece king = new ChessPiece();
-        private void form_board_Load(object sender, EventArgs e)
-        {
-            this.pictureBox1.Parent = picture_board;
-        }
+       
+        
+       
+        
+        
+        
+      
 
         private void picture_board_Click(object sender, EventArgs e)
         {

@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChessPieces\ChessPiecesName.cs" />
+    <Compile Include="ChessPieces\Gyukusho.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChessPieces\Hisha.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
