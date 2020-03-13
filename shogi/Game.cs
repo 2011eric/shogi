@@ -37,7 +37,7 @@ namespace shogi
     {
         
         private int currentPlayer;
-        public ChessPiece[,] board;
+        private ChessPiece[,] board;
         public Game()
         {
             board = new ChessPiece[9, 9];
@@ -73,6 +73,11 @@ namespace shogi
             //TODO: Convert mouse pos to board pos when board is clicked.
             return clickPos;
         }
+        public ChessPiece GetChessPiece(pos index)
+        {
+            return board[index.X, index.Y];
+        } 
+    }
        
     }
 }

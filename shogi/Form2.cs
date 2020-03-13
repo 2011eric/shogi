@@ -20,10 +20,10 @@ namespace shogi
             InitializeComponent();
             Hisha test = new Hisha(new pos(1, 1));
             test.Upgrade();     
-            /*foreach(pos i in test.possibleMove(new pos(5,5)))
+            foreach(pos i in test.possibleMove(new pos(5,5)))
             {
                 MessageBox.Show(i.ToString());
-            }*/
+            }
            
        
             
