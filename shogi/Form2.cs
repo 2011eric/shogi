@@ -12,11 +12,13 @@ namespace shogi
 {
     public partial class form_board : Form
     {
+
         public form_board()
         {
             InitializeComponent();
         }
-
+        //Controls
+        private Chess
         private void form_board_Load(object sender, EventArgs e)
         {
             this.pictureBox1.Parent = picture_board;
