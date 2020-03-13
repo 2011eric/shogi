@@ -55,7 +55,7 @@ namespace shogi
             if (player == "first")
             {
                 Board.board[5, 9] = new Gyukusho(new Point(5, 9), player);
-
+                Board.board[2, 9] = new Hisha(new Point(2, 8), player);
             }
             else
             {

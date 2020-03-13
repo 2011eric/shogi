@@ -18,8 +18,5 @@ namespace shogi
             this.type = type;
         }
 
-        
-
-        public abstract List<Point> possibleMove(Point current);
     }
 }
