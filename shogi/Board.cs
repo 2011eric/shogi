@@ -15,12 +15,21 @@ namespace shogi
             //Check if chesspiece out of border
             return (current.X > 0 && current.X < 10) ? ((current.Y > 0 && current.Y < 10) ?true:false): false;
         }
-
+        public static ChessPiece getChessPiece(Point point)
+        {
+            //Get the chess piece by its position on the board
+            return board[point.X, point.Y];
+        }
         public static List<Point> getPossibleMove(Point point)
         {
-            List<Point> possibleMove;
-            String chessPieceType = board[point.X, point.Y].getCurrentType();
-            switch (chessPieceType)
+            //Input the coordinate of the board
+            //This is the list which will be returned
+            List<Point> possibleMove = new List<Point>();
+            //Get the chess piece by its position on the board
+            ChessPiece m_ChessPiece = getChessPiece(point);
+
+            //TODO add the possible move below
+            switch (m_ChessPiece.getCurrentType())
             {
                 case GYUKUSHO:
                     break;
@@ -43,7 +52,7 @@ namespace shogi
                 case HUHYO:
                     break;
             }
-            return null;
+            return possibleMove;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace shogi.ChessPieces
     class Gyukusho : ChessPiece
     {
         private Point[] move;
-        public Gyukusho(Point init, string player) : base(init, player, ChessPiecesName.GYUKUSHO, ChessPiecesName.GYUKUSHO)
+        public Gyukusho(Point init, string player) : base(init, player, ChessPieceType.Gyukusho)
         {
             
         }
@@ -28,6 +28,11 @@ namespace shogi.ChessPieces
                 }
             }
             return result;
+        }
+
+        public override void RefreshPosibleMove()
+        {
+            
         }
     }
 }

@@ -11,7 +11,7 @@ namespace shogi.ChessPieces
     {
         public string player { get; }
         public bool upgraded { get; set; }
-        public Hisha(Point init,string player) : base(init,player,ChessPiecesName.HISHA,"")
+        public Hisha(Point init, string player) : base(init, player, ChessPieceType.Hisha);
         {
             
             this.upgraded = false;
@@ -53,6 +53,11 @@ namespace shogi.ChessPieces
         public  void Upgrade()
         {
             this.upgraded = true;
+        }
+
+        public override List<Point> RefreshPosibleMove()
+        {
+            throw new NotImplementedException();
         }
     }
 }
