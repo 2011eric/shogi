@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using static shogi.ChessPieces.ChessPiecesName;
+using static shogi.BoardState;
 namespace shogi
 {
     class Board
@@ -42,25 +42,25 @@ namespace shogi
             //TODO: Check if checkmate
             return false;
         }
-        public static int moveLegal(Point point,string player)
+        public static BoardState moveLegal(Point point,string player)
         {
             ChessPiece target = getChessPiece(point);
             if (target != null )//Check if current player lose the game because of this move.
             {
                 if (target.player == player)
                 {
-                    return -1;
+                    return MyCP;
                 }
                 else
                 {
-                    return 0;
+                    return Null;
                 }
             }
             else if (Board.checkMate(point, getChessPiece(point), player))
             {
-                return -1;
+                return EnemyCheckMate;
             }
-            return 1;
+            return Null;
         }
     }
 }

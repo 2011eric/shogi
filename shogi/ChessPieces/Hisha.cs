@@ -37,10 +37,10 @@ namespace shogi.ChessPieces
             for (int i = point.X + 1; i < 10; i++)
             {
                 Point nextPoint = new Point(i, point.Y);
-                if (Board.moveLegal(nextPoint, this.player)!=-1)
+                if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
                     result.Add(nextPoint);
-                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
+                    if (Board.moveLegal(nextPoint, this.player) == BoardState.EnemyCP) break;
                 }
                 else
                 {
@@ -50,10 +50,10 @@ namespace shogi.ChessPieces
             for (int i = point.X - 1; i > 0 ; i--)
             {
                 Point nextPoint = new Point(i, point.Y);
-                if (Board.moveLegal(nextPoint, this.player) != -1)
+                if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
                     result.Add(nextPoint);
-                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
+                    if (Board.moveLegal(nextPoint, this.player) == BoardState.EnemyCP) break;
                 }
                 else
                 {
@@ -63,10 +63,10 @@ namespace shogi.ChessPieces
             for (int i = point.Y + 1; i < 10; i++)
             {
                 Point nextPoint = new Point(point.X,i );
-                if (Board.moveLegal(nextPoint, this.player) != -1)
+                if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
                     result.Add(nextPoint);
-                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
+                    if (Board.moveLegal(nextPoint, this.player) == BoardState.EnemyCP) break;
                 }
                 else
                 {
@@ -76,10 +76,10 @@ namespace shogi.ChessPieces
             for (int i = point.Y - 1; i > 0 ; i--)
             {
                 Point nextPoint = new Point(point.X, i);
-                if (Board.moveLegal(nextPoint, this.player) != -1)
+                if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
                     result.Add(nextPoint);
-                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
+                    if (Board.moveLegal(nextPoint, this.player) == BoardState.EnemyCP) break;
                 }
                 else
                 {

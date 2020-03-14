@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="BoardState.cs" />
     <Compile Include="ChessPieces\ChessPiecesName.cs" />
     <Compile Include="ChessPieces\Gyukusho.cs">
       <SubType>Component</SubType>
