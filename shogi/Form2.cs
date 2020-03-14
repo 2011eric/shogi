@@ -14,27 +14,37 @@ namespace shogi
 {
     public partial class form_board : Form
     {
-
+        Game m_game = new Game();
         public form_board()
         {
             InitializeComponent();
-            Hisha test = new Hisha(new Point(1, 1), "ih");
-           
-           
-       
-            
-            this.picture_board.Controls.Add(test);
 
-            test.BackColor = System.Drawing.Color.Transparent;
-            test.Image = global::shogi.Properties.Resources.銀;
-            test.Location = new System.Drawing.Point(136, 512);
+            // Hisha hisha1 = new Hisha(new Point(6, 1), "ih");
+            foreach (ChessPiece cp in Board.board)
+            {
+                if (cp != null)
+                    this.picture_board.Controls.Add(cp);
+            }
+            foreach(Path path in Board.path){
+                if (path != null)
+                {
+                    this.picture_board.Controls.Add(path);
+                }
+            }
             
-            test.Size = new System.Drawing.Size(133, 67);
-            test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+
+
+            
+            /*
+            test.BackColor = System.Drawing.Color.Transparent;
+            test.Image = global::shogi.Properties.Resources.Ginsho;
+            test.Location = new System.Drawing.Point(0, 0);
+            
+            test.Size = new System.Drawing.Size(65, 65);
             Board.setChessPiece(new Point(2, 8), new Hisha(new Point(2, 8), "first"));
             Board.setChessPiece(new Point(2, 2), new Hisha(new Point(2, 2), "second"));
             Board.getChessPiece(new Point(2, 8)).RefreshPosibleMove(new Point(2, 8));
-            
+            */
 
 
 
@@ -54,6 +64,11 @@ namespace shogi
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
         {
 
         }

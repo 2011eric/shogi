@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Collections.Generic;
+
 namespace shogi.ChessPieces
 {
     
@@ -11,7 +12,7 @@ namespace shogi.ChessPieces
     {
         List<Point> upgradedMoves = new List<Point>();
 
-        public Hisha(Point init, string player) : base(init, player, ChessPieceType.Hisha)
+        public Hisha(Point init, Player player) : base(init, player, ChessPieceType.Hisha)
         {
             for(int i = -1; i <= 1; i++)
             {
@@ -97,12 +98,13 @@ namespace shogi.ChessPieces
                         if (!result.Contains(nextPoint)) result.Add(nextPoint);
                     }
                 }
+
             }
             foreach(Point i in result)
             {
-                System.Windows.Forms.MessageBox.Show("next:" + i.ToString());
+                //System.Windows.Forms.MessageBox.Show("next:" + i.ToString());
             }
-            this.possibleMove = result;
+            possibleMove = result;
         }
     }
 }

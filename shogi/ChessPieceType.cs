@@ -18,5 +18,7 @@
         Narikei,  //Expensive horse
         Narikyou,//Fragrant car
         Tokin      //Soldier
+
+        
     }
 }

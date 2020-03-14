@@ -10,25 +10,39 @@ namespace shogi
 {
     public class Game
     {
-        
+        Player[] playerList = new Player[2];
         private int currentPlayer;
-        private ChessPiece[,] board = new ChessPiece[9, 9];
         public Game()
         {
-           
-            Player[] playerList = new Player[2];
+
+         
             playerList[0] = new Player("first");
             playerList[1] = new Player("second");
+            SpawnPieces(playerList[0]);
+            SpawnPieces(playerList[1]);
             currentPlayer = 0;
-            
+            SpawnPaths();
         }
-        private void SpawnPieces(string player)
+
+        private void SpawnPaths()
+        {
+            for(int i = 1; i < 10; i++)
+            {
+                for(int j = 1; j < 10; j++)
+                {
+                    Board.path[i, j] = new Path(new Point(i, j));
+                }
+            }
+        }
+        private void SpawnPieces(Player player)
         {
             //TODO: Initialize all the chesspieces on the board
-            if (player == "first")
+            if (player.Equals(playerList[0]))
             {
-                Board.setChessPiece(new Point(5, 9) , new Gyukusho(new Point(5, 9), player));
-                Board.setChessPiece(new Point(2, 8) , new Hisha(new Point(2, 8), player));
+                //Board.setChessPiece(new Point(5, 9) , new Gyukusho(new Point(1, 1), player));
+                 Board.setChessPiece(new Hisha(new Point(4, 2), player));
+                 Board.setChessPiece(new Hisha(new Point(4, 7), player));
+
             }
             else
             {
@@ -64,6 +78,29 @@ namespace shogi
             //TODO: Convert mouse Point to board Point when board is clicked.
             return clickPoint;
         }
+
+        public static void HighLightPath(List<Point> point)
+        {
+            if (point == null) return;
+
+            HideAllPath();
+
+            foreach(Point element in point)
+            {
+                if(point != null) Board.getPath(element).show();
+            }
+
+           
+        }
+
+        public static void HideAllPath()
+        {
+            foreach (Path path in Board.path)
+            {
+                if (path != null) path.hide();
+            }
+        }
+
        
     }
        

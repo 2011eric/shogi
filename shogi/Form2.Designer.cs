@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace shogi
 {
@@ -51,7 +52,7 @@ namespace shogi
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(771, 600);
+            this.ClientSize = new System.Drawing.Size(771, 673);
             this.Controls.Add(this.picture_board);
             this.Name = "form_board";
             this.Text = "Form2";
@@ -64,7 +65,11 @@ namespace shogi
 
         private void form_board_Load(object sender, EventArgs e)
         {
-            
+            foreach (ChessPiece cp in Board.board)
+            {
+                if (cp != null)
+                    cp.BringToFront();
+            }
         }
 
         #endregion
