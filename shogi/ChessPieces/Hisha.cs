@@ -9,14 +9,25 @@ namespace shogi.ChessPieces
     
     class Hisha:ChessPiece
     {
+        List<Point> upgradedMoves = new List<Point>();
 
         public Hisha(Point init, string player) : base(init, player, ChessPieceType.Hisha)
         {
+            for(int i = -1; i <= 1; i++)
+            {
+                for (int j = -1; j <= 1; j++)
+                {
+                    if (!(i == 0 && j == 0))
+                    {
+                        upgradedMoves.Add(new Point(i, j));
+                        
+                    }
+                }
 
+            }
         }
         
-        Point[] upgradedMoves = new Point[8] { new Point(1,-1), new Point(0,-1), new Point(-1,-1),
-                                new Point(1, 0), new Point(-1,0), new Point( 1, 1),new Point(0,1) , new Point(-1,1)};
+        
        
        
         public override void RefreshPosibleMove(Point point)
@@ -25,31 +36,73 @@ namespace shogi.ChessPieces
             List<Point> result = new List<Point>();
             for (int i = point.X + 1; i < 10; i++)
             {
-                //if()
-
+                Point nextPoint = new Point(i, point.Y);
+                if (Board.moveLegal(nextPoint, this.player)!=-1)
+                {
+                    result.Add(nextPoint);
+                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
+                }
+                else
+                {
+                    break;
+                }
             }
-            /* staged
-            if(current.X != i)
+            for (int i = point.X - 1; i > 0 ; i--)
+            {
+                Point nextPoint = new Point(i, point.Y);
+                if (Board.moveLegal(nextPoint, this.player) != -1)
                 {
-                    result.Add(new Point(i, current.Y));
+                    result.Add(nextPoint);
+                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
                 }
-                if(current.Y != i)
+                else
                 {
-                    result.Add(new Point(current.X, i));
+                    break;
                 }
-            */
+            }
+            for (int i = point.Y + 1; i < 10; i++)
+            {
+                Point nextPoint = new Point(point.X,i );
+                if (Board.moveLegal(nextPoint, this.player) != -1)
+                {
+                    result.Add(nextPoint);
+                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = point.Y - 1; i > 0 ; i--)
+            {
+                Point nextPoint = new Point(point.X, i);
+                if (Board.moveLegal(nextPoint, this.player) != -1)
+                {
+                    result.Add(nextPoint);
+                    if (Board.moveLegal(nextPoint, this.player) == 0) break;
+                }
+                else
+                {
+                    break;
+                }
+            }
             if (upgraded)
             {
                 foreach (Point i in upgradedMoves)
                 {
-                    Point _new = new Point(point.X + i.X, point.Y + i.Y);
-                    if (_new.X > 0 && _new.X < 10 && _new.Y > 0 && _new.Y < 10)
+                    Point nextPoint = new Point(point.X + i.X, point.Y + i.Y);
+
+                    if (Board.CheckBorder(nextPoint))
                     {
-                        if (!result.Contains(_new)) result.Add(_new);
+                        if (!result.Contains(nextPoint)) result.Add(nextPoint);
                     }
                 }
             }
-            possibleMove = result;
+            foreach(Point i in result)
+            {
+                System.Windows.Forms.MessageBox.Show("next:" + i.ToString());
+            }
+            this.possibleMove = result;
         }
     }
 }

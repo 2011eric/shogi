@@ -19,11 +19,7 @@ namespace shogi
         {
             InitializeComponent();
             Hisha test = new Hisha(new Point(1, 1), "ih");
-            test.Upgrade();     
-            foreach(pos i in test.possibleMove(new pos(5,5)))
-            {
-                MessageBox.Show(i.ToString());
-            }
+           
            
        
             
@@ -35,8 +31,10 @@ namespace shogi
             
             test.Size = new System.Drawing.Size(133, 67);
             test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-           
-
+            Board.setChessPiece(new Point(2, 8), new Hisha(new Point(2, 8), "first"));
+            Board.setChessPiece(new Point(2, 2), new Hisha(new Point(2, 2), "second"));
+            Board.getChessPiece(new Point(2, 8)).RefreshPosibleMove(new Point(2, 8));
+            
 
 
 

@@ -9,7 +9,7 @@ namespace shogi
 {
     class Board
     {
-        public static ChessPiece[,] board = new ChessPiece[9, 9];
+        private static ChessPiece[,] board = new ChessPiece[10, 10];
         public static bool CheckBorder(Point current)
         {
             //Check if chesspiece out of border
@@ -19,6 +19,10 @@ namespace shogi
         {
             //Get the chess piece by its position on the board
             return board[point.X, point.Y];
+        }
+        public static void setChessPiece(Point point,ChessPiece target)
+        {
+            board[point.X, point.Y] = target;
         }
         public static List<Point> getPossibleMove(Point point)
         {
@@ -31,6 +35,32 @@ namespace shogi
             //TODO add the possible move below
             
             return possibleMove;
+        }
+        public static bool checkMate(Point point,ChessPiece target,string player)
+        {
+            //Input:The chessPiece and point to move at next step
+            //TODO: Check if checkmate
+            return false;
+        }
+        public static int moveLegal(Point point,string player)
+        {
+            ChessPiece target = getChessPiece(point);
+            if (target != null )//Check if current player lose the game because of this move.
+            {
+                if (target.player == player)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else if (Board.checkMate(point, getChessPiece(point), player))
+            {
+                return -1;
+            }
+            return 1;
         }
     }
 }

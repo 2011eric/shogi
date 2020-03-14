@@ -8,34 +8,6 @@ using shogi.ChessPieces;
 
 namespace shogi
 {
-    /*
-    public struct Point
-    {
-        public int X { get; }
-        public int Y { get; }
-
-        public Point(int x, int y)
-        {
-            X = x;
-            Y = y;
-        }
-        public override bool Equals(Object obj)
-        {
-            //Check for null and compare run-time types.
-            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
-            {
-                return false;
-            }
-            else
-            {
-                Point p = (Point)obj;
-                return (X == p.X) && (Y == p.Y);
-            }
-        }
-
-        public override string ToString() => $"({X}, {Y})";
-    }
-    */
     public class Game
     {
         
@@ -52,14 +24,15 @@ namespace shogi
         }
         private void SpawnPieces(string player)
         {
+            //TODO: Initialize all the chesspieces on the board
             if (player == "first")
             {
-                Board.board[5, 9] = new Gyukusho(new Point(5, 9), player);
-                Board.board[2, 9] = new Hisha(new Point(2, 8), player);
+                Board.setChessPiece(new Point(5, 9) , new Gyukusho(new Point(5, 9), player));
+                Board.setChessPiece(new Point(2, 8) , new Hisha(new Point(2, 8), player));
             }
             else
             {
-                Board.board[1, 9] = new Gyukusho(new Point(5, 9), player);
+                //Board.board[1, 9] = new Gyukusho(new Point(5, 9), player);
             }
             
 
@@ -91,10 +64,7 @@ namespace shogi
             //TODO: Convert mouse Point to board Point when board is clicked.
             return clickPoint;
         }
-        public static ChessPiece GetChessPiece(Point index)
-        {
-            //return board[index.X, index.Y];
-        } 
+       
     }
        
     
