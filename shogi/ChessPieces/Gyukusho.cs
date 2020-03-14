@@ -15,24 +15,19 @@ namespace shogi.ChessPieces
             
         }
         
-        
-        public override List<Point> PointsibleMove(Point current)
+
+        public override void RefreshPosibleMove(Point point)
         {
             List<Point> result = new List<Point>();
-            foreach(Point i in moves)
+            foreach (Point i in move)
             {
-                Point _new = new Point(current.X+i.X, current.Y+i.Y);
+                Point _new = new Point(point.X + i.X, point.Y + i.Y);
                 if (_new.X > 0 && _new.X < 10 && _new.Y > 0 && _new.Y < 10)
                 {
                     result.Add(_new);
                 }
             }
-            return result;
-        }
-
-        public override void RefreshPosibleMove()
-        {
-            
+            possibleMove = result;
         }
     }
 }

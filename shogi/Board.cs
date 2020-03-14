@@ -29,29 +29,7 @@ namespace shogi
             ChessPiece m_ChessPiece = getChessPiece(point);
 
             //TODO add the possible move below
-            switch (m_ChessPiece.getCurrentType())
-            {
-                case GYUKUSHO:
-                    break;
-                case HISHA:
-                    break;
-                case RYUOU:
-                    break;
-                case KAKUGYO:
-                    break;
-                case RYUUMA:
-                    break;
-                case KINSHO:
-                    break;
-                case GINSHO:
-                    break;
-                case KEIMA:
-                    break;
-                case KYOSHA:
-                    break;
-                case HUHYO:
-                    break;
-            }
+            
             return possibleMove;
         }
     }
