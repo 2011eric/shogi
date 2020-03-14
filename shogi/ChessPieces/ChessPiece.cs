@@ -58,7 +58,7 @@ namespace shogi
             return canUpgrade;
         }
 
-        public abstract void RefreshPosibleMove();
+        public abstract void RefreshPosibleMove(Point point);
         //The above method should only be called once after the cp was moved or every round of the game
 
     }
