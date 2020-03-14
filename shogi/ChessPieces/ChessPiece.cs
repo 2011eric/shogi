@@ -12,8 +12,10 @@ namespace shogi
     {
         public String defaultType { get; }
         public String upgradeType { get; }
-        public String currentType { get; }
-        public String player { get; }
+        private String currentType;
+        public String player { get; set; }
+        public bool canUpgrade = false;
+        public bool upgraded = false;
 
         public List<Point> possibleMove { get; set; }
 
@@ -23,6 +25,23 @@ namespace shogi
             this.defaultType = defaultType;
             this.upgradeType = upgradeType;
             currentType = defaultType;
+            canUpgrade = false;
+            upgraded = false;
+        }
+
+        public String getCurrentType()
+        {
+            return currentType;
+        }
+
+        public bool upgrade()
+        {
+            if (canUpgrade && !upgraded)
+            {
+                currentType = upgradeType;
+                upgraded = true;
+            }
+            return canUpgrade;
         }
 
     }
