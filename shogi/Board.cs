@@ -12,7 +12,7 @@ namespace shogi
         public static ChessPiece[,] board = new ChessPiece[10, 10];
         public static Path[,] path = new Path[10, 10];
         public static int cpNum = 100;
-        public static Size sizeOfCP = new Size(68, 68);
+        public static Size sizeOfCP = new Size(67, 67);
         public static ChessPiece choosed = null;
 
         public static Point BoardToWorld(Point board_pos)
@@ -20,7 +20,7 @@ namespace shogi
             //This methot will turn board position to world position
             //e.g. (1,3) => (200, 400)
             Point world_pos = new Point(0,0);
-            Point starting_point = new Point(571,24);
+            Point starting_point = new Point(857,30);
             double x_unit = 68.6;
             double y_unit = 69.6;
 

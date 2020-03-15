@@ -22,8 +22,13 @@ namespace shogi
             SpawnPieces();
             currentPlayer = playerList[0];
             SpawnPaths();
-           // DisableOpponentCP();
-           
+
+            // DisableOpponentCP();
+            foreach(Path p in Board.path)
+            {
+                if (p != null) p.show();
+            }
+
         }
 
         private void SpawnPaths()
