@@ -83,9 +83,31 @@ namespace shogi
             board[to.X, to.Y] = cp;
             cp.moveTo(to);
             board[from.X, from.Y] = null;
-            
+            choosed = null;
+            Game.switchPlayer();
+            Game.HideAllPath();
         }
 
+        public static void KillCP(ChessPiece deadman)
+        {
+            if (choosed != null)
+            {
+                Point buffer = deadman.board_point;
+                CPToGraveYard(deadman);
+            
+                MoveCP(choosed, buffer);
+            }
+        }
+
+        public static void CPToGraveYard(ChessPiece cp)
+        {
+            Point to = new Point(1, 1);
+            Point from = cp.board_point;
+            board[to.X, to.Y] = cp;
+            cp.moveTo(to);
+            board[from.X, from.Y] = null;
+            cp.kill(choosed.player);
+        }
               
     }
 }

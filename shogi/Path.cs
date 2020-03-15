@@ -31,7 +31,6 @@ namespace shogi
         private void Button_Click(object sender, EventArgs e)
         {
             Board.MoveCP(Board.choosed, pos);
-            Game.HideAllPath();
         }
 
         public void show() {

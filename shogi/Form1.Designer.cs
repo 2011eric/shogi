@@ -55,10 +55,10 @@
             // lable_title
             // 
             this.lable_title.AutoSize = true;
-            this.lable_title.Font = new System.Drawing.Font("Taipei Sans TC Beta", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lable_title.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lable_title.Location = new System.Drawing.Point(53, 104);
             this.lable_title.Name = "lable_title";
-            this.lable_title.Size = new System.Drawing.Size(208, 37);
+            this.lable_title.Size = new System.Drawing.Size(209, 40);
             this.lable_title.TabIndex = 2;
             this.lable_title.Text = "廢到笑的將棋";
             // 

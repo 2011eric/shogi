@@ -32,6 +32,7 @@ namespace shogi
         private void InitializeComponent()
         {
             this.picture_board = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture_board)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,12 +48,24 @@ namespace shogi
             this.picture_board.TabStop = false;
             this.picture_board.Click += new System.EventHandler(this.picture_board_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Current Player";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
             // form_board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(771, 673);
+            this.ClientSize = new System.Drawing.Size(880, 673);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.picture_board);
             this.Name = "form_board";
             this.Text = "Form2";
@@ -67,7 +80,7 @@ namespace shogi
         {
             foreach (ChessPiece cp in Board.board)
             {
-                if (cp != null)
+                if (cp != null) 
                     cp.BringToFront();
             }
         }
@@ -75,5 +88,6 @@ namespace shogi
         #endregion
 
         private System.Windows.Forms.PictureBox picture_board;
+        private System.Windows.Forms.Label label1;
     }
 }
