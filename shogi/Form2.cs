@@ -25,13 +25,13 @@ namespace shogi
                 if (cp != null)
                     this.picture_board.Controls.Add(cp);
             }
-            foreach(Path path in Board.path){
+            foreach (Path path in Board.path){
                 if (path != null)
                 {
                     this.picture_board.Controls.Add(path);
                 }
             }
-            
+           
 
 
             
@@ -71,6 +71,11 @@ namespace shogi
         private void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+            this.label1.Text = "Current Player  " + Game.currentPlayer.ToString();
         }
     }
     

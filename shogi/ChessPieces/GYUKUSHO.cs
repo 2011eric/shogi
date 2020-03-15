@@ -9,7 +9,6 @@ namespace shogi.ChessPieces
 {
     class Gyukusho : ChessPiece
     {
-        private Point[] move;
         public Gyukusho(Point init, Player player) : base(init, player, ChessPieceType.Gyukusho)
         {
             
@@ -19,12 +18,24 @@ namespace shogi.ChessPieces
         public override void RefreshPosibleMove(Point point)
         {
             List<Point> result = new List<Point>();
-            foreach (Point i in move)
+            for(int i = -1; i <= 1; i++)
             {
-                Point _new = new Point(point.X + i.X, point.Y + i.Y);
-                if (_new.X > 0 && _new.X < 10 && _new.Y > 0 && _new.Y < 10)
+                for(int j = -1; j <= 1; j++)
                 {
-                    result.Add(_new);
+                    if (i != 0 || j != 0)
+                    {
+                        Point nextPoint = new Point(board_point.X + i, board_point.Y + j);
+                        if (!Board.CheckBorder(nextPoint)) break;
+                        if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
+                        {
+                            result.Add(nextPoint);
+                            if (Board.moveLegal(nextPoint, this.player) == BoardState.EnemyCP) break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
                 }
             }
             possibleMove = result;

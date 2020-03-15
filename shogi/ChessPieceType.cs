@@ -9,7 +9,7 @@
         Ginsho,    //Silver  
         Keima,      //Expensive horse
         Kyosha,     //Fragrant car
-        Huhyo,      //Soldier
+        Fuhyo,      //Soldier
 
         //upgrade
         Ryuou,      //Fly car

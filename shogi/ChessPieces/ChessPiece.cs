@@ -21,6 +21,7 @@ namespace shogi
 
         public List<Point> possibleMove = new List<Point>();
 
+        protected Image cpImage = global::shogi.Properties.Resources.Shogi_fuhyo;
 
         public ChessPiece(Point init,Player player, ChessPieceType defaultType, ChessPieceType upgradeType) {
             this.player = player;
@@ -51,13 +52,15 @@ namespace shogi
         {
             this.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             this.BackColor = System.Drawing.Color.Transparent;
-            Image cpImage = global::shogi.Properties.Resources.Ginsho;
+            getCorrespondentImg();
+            //rotate the image if the player is the enemy
+            if (this.player.playerEnum == PlayerEnum.Second) cpImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             this.BackgroundImage = cpImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.FlatAppearance.BorderSize = 0;
             this.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, Color.White);
             this.FlatStyle =FlatStyle.Flat;
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Location = Board.BoardToWorld(this.board_point);
@@ -87,9 +90,15 @@ namespace shogi
 
         private void Button_Click(object sender, EventArgs e)
         {
-            RefreshPosibleMove(this.board_point);
-            Board.choosed = this;
-            Game.HighLightPath(possibleMove);
+            if (Board.choosed == null || Board.choosed.player == this.player)
+            {
+                RefreshPosibleMove(this.board_point);
+                Board.choosed = this;
+                Game.HighLightPath(possibleMove);
+            }
+            else Board.KillCP(this);
+            
+            //highlight();
         }
 
         public ChessPieceType getCurrentType()
@@ -115,8 +124,41 @@ namespace shogi
             this.Location = Board.BoardToWorld(this.board_point);
         }
 
+        public void kill(Player by)
+        {
+            player = by;
+            cpImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            this.BackgroundImage = cpImage;
+
+            canUpgrade = false;
+            upgraded = false;
+        }
+
+        public void highlight()
+        {
+            this.BackColor = Color.FromArgb(70, Color.White) ;
+        }
+        public void deHighlight()
+        {
+            BackColor = Color.Transparent;
+        }
+
         public abstract void RefreshPosibleMove(Point point);
         //The above method should only be called once after the cp was moved or every round of the game
 
+        private void getCorrespondentImg()
+        {
+            Image image = Properties.Resources.Shogi_fuhyo;
+            switch (currentType)
+            {
+                case ChessPieceType.Gyukusho:
+                    image = Properties.Resources.Shogi_gyokusho;
+                    break;
+                default:
+                    image = Properties.Resources.Shogi_hisha;
+                    break;
+            }
+            cpImage = image;
+        }
     }
 }

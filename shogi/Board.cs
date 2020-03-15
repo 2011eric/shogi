@@ -36,7 +36,10 @@ namespace shogi
         public static ChessPiece getChessPiece(Point point)
         {
             //Get the chess piece by its position on the board
-            return board[point.X, point.Y];
+            if(CheckBorder(point))
+                return board[point.X, point.Y];
+            return null;
+
         }
         public static void setChessPiece(ChessPiece target)
         {
@@ -46,7 +49,9 @@ namespace shogi
 
         public static Path getPath(Point point)
         {
-            return path[point.X, point.Y];
+            if(CheckBorder(point))
+                return path[point.X, point.Y];
+            return null;
         }
 
 
@@ -67,7 +72,7 @@ namespace shogi
                 }
                 else
                 {
-                    return Null;
+                    return EnemyCP;
                 }
             }
             else if (Board.CheckMate(point, getChessPiece(point), player))
@@ -83,9 +88,31 @@ namespace shogi
             board[to.X, to.Y] = cp;
             cp.moveTo(to);
             board[from.X, from.Y] = null;
-            
+            choosed = null;
+            Game.switchPlayer();
+            Game.HideAllPath();
         }
 
+        public static void KillCP(ChessPiece deadman)
+        {
+            if (choosed != null)
+            {
+                Point buffer = deadman.board_point;
+                CPToGraveYard(deadman);
+            
+                MoveCP(choosed, buffer);
+            }
+        }
+
+        public static void CPToGraveYard(ChessPiece cp)
+        {
+            Point to = new Point(1, 1);
+            Point from = cp.board_point;
+            board[to.X, to.Y] = cp;
+            cp.moveTo(to);
+            board[from.X, from.Y] = null;
+            cp.kill(choosed.player);
+        }
               
     }
 }
