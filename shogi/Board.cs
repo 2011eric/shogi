@@ -107,12 +107,9 @@ namespace shogi
         static int graveYard_1_num = 0;
         public static void CPToGraveYard(ChessPiece cp)
         {
-            Point from = cp.board_point;
-            Point to = new Point(1, 1);
-            board[to.X, to.Y] = cp;
-            cp.moveTo(to);
+            Point from = cp.board_point;       
             board[from.X, from.Y] = null;
-            cp.kill(choosed.player);
+            //cp.kill(choosed.player);
         }
               
     }

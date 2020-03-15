@@ -48,7 +48,7 @@ namespace shogi
             //==============================
             //Second Player
             //==============================
-            Board.setChessPiece(new Gyukusho(new Point(5, 1), playerList[1]));
+            Board.setChessPiece(new Gyukusho(new Point(5, 2), playerList[1]));
             Board.setChessPiece(new Hisha(new Point(2, 3), playerList[1]));
             
 
