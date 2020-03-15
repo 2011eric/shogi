@@ -13,19 +13,21 @@ namespace shogi
         public static Path[,] path = new Path[10, 10];
         public static int cpNum = 100;
         public static Size sizeOfCP = new Size(67, 67);
+        public static Size sizeOfDeadCP = new Size(30, 30);
         public static ChessPiece choosed = null;
+        static Point board_starting_point = new Point(857, 30);
+        static double x_unit = 68.6;
+        static double y_unit = 69.6;
 
         public static Point BoardToWorld(Point board_pos)
         {
             //This methot will turn board position to world position
             //e.g. (1,3) => (200, 400)
             Point world_pos = new Point(0,0);
-            Point starting_point = new Point(857,30);
-            double x_unit = 68.6;
-            double y_unit = 69.6;
+            
 
-            world_pos.X = (int)(starting_point.X - (board_pos.X -1) * x_unit);
-            world_pos.Y = (int)(starting_point.Y + (board_pos.Y - 1) * y_unit);
+            world_pos.X = (int)(board_starting_point.X - (board_pos.X -1) * x_unit);
+            world_pos.Y = (int)(board_starting_point.Y + (board_pos.Y - 1) * y_unit);
             return world_pos;
         }
         public static bool CheckBorder(Point current)
@@ -66,19 +68,13 @@ namespace shogi
             ChessPiece target = getChessPiece(point);
             if (target != null )//Check if current player lose the game because of this move.
             {
-                if (target.player.Equals(player))
-                {
-                    return MyCP;
-                }
-                else
-                {
-                    return EnemyCP;
-                }
+                if (target.player.Equals(player))            
+                    return MyCP;                
+                else               
+                    return EnemyCP;                
             }
-            else if (Board.CheckMate(point, getChessPiece(point), player))
-            {
-                return EnemyCheckMate;
-            }
+            else if (Board.CheckMate(point, getChessPiece(point), player))            
+                return EnemyCheckMate;            
             return Null;
         }
 
@@ -87,10 +83,12 @@ namespace shogi
             Point from = cp.board_point;
             board[to.X, to.Y] = cp;
             cp.moveTo(to);
+            cp.dead = false;
+            cp.Size = sizeOfCP;
             board[from.X, from.Y] = null;
             choosed = null;
+            Game.HideAllPath(); 
             Game.switchPlayer();
-            Game.HideAllPath();
         }
 
         public static void KillCP(ChessPiece deadman)
@@ -99,15 +97,18 @@ namespace shogi
             {
                 Point buffer = deadman.board_point;
                 CPToGraveYard(deadman);
-            
                 MoveCP(choosed, buffer);
             }
         }
 
+        static Point graveYard_0_starting_point = new Point(0, 0);
+        static Point graveYard_1_starting_point = new Point(0, 0);
+        static int graveYard_0_num = 0;
+        static int graveYard_1_num = 0;
         public static void CPToGraveYard(ChessPiece cp)
         {
-            Point to = new Point(1, 1);
             Point from = cp.board_point;
+            Point to = new Point(1, 1);
             board[to.X, to.Y] = cp;
             cp.moveTo(to);
             board[from.X, from.Y] = null;

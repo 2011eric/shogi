@@ -38,9 +38,9 @@ namespace shogi
             // picture_board
             // 
             this.picture_board.BackColor = System.Drawing.Color.White;
-            this.picture_board.Image = global::shogi.Properties.Resources.棋盤1;
+            this.picture_board.Image = global::shogi.Properties.Resources.棋盤;
             this.picture_board.Location = new System.Drawing.Point(0, -1);
-            this.picture_board.Margin = new System.Windows.Forms.Padding(6);
+            this.picture_board.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picture_board.Name = "picture_board";
             this.picture_board.Size = new System.Drawing.Size(1248, 682);
             this.picture_board.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -49,13 +49,14 @@ namespace shogi
             // 
             // form_board
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1760, 1399);
+            this.ClientSize = new System.Drawing.Size(1247, 682);
             this.Controls.Add(this.picture_board);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "form_board";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.form_board_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picture_board)).EndInit();

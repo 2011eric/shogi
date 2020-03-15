@@ -17,6 +17,7 @@ namespace shogi
         public bool haveUpgrade;
         public bool canUpgrade;
         public bool upgraded;
+        public bool dead = false;
         public Point board_point;
 
         public List<Point> possibleMove = new List<Point>();
@@ -92,7 +93,9 @@ namespace shogi
         {
             if (Board.choosed == null || Board.choosed.player == this.player)
             {
-                RefreshPosibleMove(this.board_point);
+                if (!dead)
+                    RefreshPosibleMove(this.board_point);
+                else RefreshPossibleMoveDead();
                 Board.choosed = this;
                 Game.HighLightPath(possibleMove);
             }
@@ -129,9 +132,10 @@ namespace shogi
             player = by;
             cpImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             this.BackgroundImage = cpImage;
-
+            this.Size = Board.sizeOfDeadCP;
             canUpgrade = false;
             upgraded = false;
+            dead = true;
         }
 
         public void highlight()
@@ -146,17 +150,60 @@ namespace shogi
         public abstract void RefreshPosibleMove(Point point);
         //The above method should only be called once after the cp was moved or every round of the game
 
+        public void RefreshPossibleMoveDead()
+        {
+            List<Point> result = new List<Point>();
+            for (int i = 1; i < 10; i++)
+            {
+                for(int j = 1; j < 10; j++)
+                {
+                    if (Board.board[i, j] == null) result.Add(new Point(i, j));
+                }
+            }
+            possibleMove = result;
+        }
+
         private void getCorrespondentImg()
         {
             Image image = Properties.Resources.Shogi_fuhyo;
             switch (currentType)
             {
-                case ChessPieceType.Gyukusho:
-                    image = Properties.Resources.Shogi_gyokusho;
+                
+                case ChessPieceType.Gyukusho:   //Ding
+                    break;
+                case ChessPieceType.Hisha:      //Fly Car
+                    break;
+                case ChessPieceType.Kakugyo:    //Angle Walk
+                    break;
+                case ChessPieceType.Kinsho:     //Gold
+                    break;
+                case ChessPieceType.Ginsho:     //Silver
+                    break;
+                case ChessPieceType.Keima:      //Expensive horse
+                    break;
+                case ChessPieceType.Kyosha:     //Fragrant car
+                    break;
+                case ChessPieceType.Fuhyo:      //Soldier
+                    break;
+                //==========
+                //upgraded type
+                //==========
+                case ChessPieceType.Ryuou:      //Fly Car
+                    break;
+                case ChessPieceType.Ryuuma:     //Angle Walk
+                    break;
+                case ChessPieceType.Narigin:    //Silver
+                    break;
+                case ChessPieceType.Narikei:    //Expensive horse
+                    break;
+                case ChessPieceType.Narikyou:   //Fragrant car
+                    break;
+                case ChessPieceType.Tokin:      //Soldier
                     break;
                 default:
                     image = Properties.Resources.Shogi_hisha;
                     break;
+                     
             }
             cpImage = image;
         }

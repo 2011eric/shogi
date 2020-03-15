@@ -19,16 +19,12 @@ namespace shogi
 
             playerList[0] = new Player("first");
             playerList[1] = new Player("second");
-            SpawnPieces();
+            SpawnAllPieces();
             currentPlayer = playerList[0];
             SpawnPaths();
 
-            // DisableOpponentCP();
-            foreach(Path p in Board.path)
-            {
-                if (p != null) p.show();
-            }
-
+            DisableOpponentCP();
+            
         }
 
         private void SpawnPaths()
@@ -41,7 +37,7 @@ namespace shogi
                 }
             }
         }
-        private void SpawnPieces()
+        private void SpawnAllPieces()
         {
             //TODO: Initialize all the chesspieces on the board
             //==============================
@@ -57,6 +53,29 @@ namespace shogi
             
 
 
+        }
+
+        private void SpawnPieces(ChessPieceType type, Player player)
+        {
+            ChessPiece cp;
+            switch (type){
+                case ChessPieceType.Gyukusho:
+                    break;
+                case ChessPieceType.Hisha:
+                    break;
+                case ChessPieceType.Kakugyo:
+                    break;
+                case ChessPieceType.Kinsho:
+                    break;
+                case ChessPieceType.Ginsho:
+                    break;
+                case ChessPieceType.Keima:
+                    break;
+                case ChessPieceType.Kyosha:
+                    break;
+                case ChessPieceType.Fuhyo:
+                    break;
+            }
         }
         public void Start()
         {

@@ -14,7 +14,6 @@ namespace shogi.ChessPieces
             
         }
         
-
         public override void RefreshPosibleMove(Point point)
         {
             List<Point> result = new List<Point>();
@@ -25,11 +24,11 @@ namespace shogi.ChessPieces
                     if (i != 0 || j != 0)
                     {
                         Point nextPoint = new Point(board_point.X + i, board_point.Y + j);
-                        if (!Board.CheckBorder(nextPoint)) break;
-                        if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
+                        if (!Board.CheckBorder(nextPoint));
+                        else if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP ||
+                            Board.moveLegal(nextPoint, this.player) == BoardState.EnemyCP)
                         {
                             result.Add(nextPoint);
-                            if (Board.moveLegal(nextPoint, this.player) == BoardState.EnemyCP) break;
                         }
                         else
                         {
