@@ -36,7 +36,10 @@ namespace shogi
         public static ChessPiece getChessPiece(Point point)
         {
             //Get the chess piece by its position on the board
-            return board[point.X, point.Y];
+            if(CheckBorder(point))
+                return board[point.X, point.Y];
+            return null;
+
         }
         public static void setChessPiece(ChessPiece target)
         {
@@ -46,7 +49,9 @@ namespace shogi
 
         public static Path getPath(Point point)
         {
-            return path[point.X, point.Y];
+            if(CheckBorder(point))
+                return path[point.X, point.Y];
+            return null;
         }
 
 
@@ -67,7 +72,7 @@ namespace shogi
                 }
                 else
                 {
-                    return Null;
+                    return EnemyCP;
                 }
             }
             else if (Board.CheckMate(point, getChessPiece(point), player))

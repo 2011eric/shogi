@@ -63,9 +63,139 @@ namespace shogi.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap Ginsho {
+        internal static System.Drawing.Bitmap Shogi_fuhyo {
             get {
-                object obj = ResourceManager.GetObject("Ginsho", resourceCulture);
+                object obj = ResourceManager.GetObject("Shogi_fuhyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_ginsho {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_ginsho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_gyokusho {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_gyokusho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_hisha {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_hisha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_kakugyo {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_kakugyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_keima {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_keima", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_kinsho {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_kinsho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_kyosha {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_kyosha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_narigin {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_narigin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_narikei {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_narikei", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_narikyo {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_narikyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_ryuma {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_ryuma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_ryuo {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_ryuo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_tokin {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_tokin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -111,10 +111,20 @@
     <None Include="Resources\棋盤.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Gyukusho.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ginsho.png" />
+    <Content Include="Resources\CP\Shogi_fuhyo.png" />
+    <Content Include="Resources\CP\Shogi_ginsho.png" />
+    <Content Include="Resources\CP\Shogi_gyokusho.png" />
+    <Content Include="Resources\CP\Shogi_hisha.png" />
+    <Content Include="Resources\CP\Shogi_kakugyo.png" />
+    <Content Include="Resources\CP\Shogi_keima.png" />
+    <Content Include="Resources\CP\Shogi_kinsho.png" />
+    <Content Include="Resources\CP\Shogi_kyosha.png" />
+    <Content Include="Resources\CP\Shogi_narigin.png" />
+    <Content Include="Resources\CP\Shogi_narikei.png" />
+    <Content Include="Resources\CP\Shogi_narikyo.png" />
+    <Content Include="Resources\CP\Shogi_ryuma.png" />
+    <Content Include="Resources\CP\Shogi_ryuo.png" />
+    <Content Include="Resources\CP\Shogi_tokin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

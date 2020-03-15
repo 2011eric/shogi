@@ -19,8 +19,7 @@ namespace shogi
 
             playerList[0] = new Player("first");
             playerList[1] = new Player("second");
-            SpawnPieces(playerList[0]);
-            SpawnPieces(playerList[1]);
+            SpawnPieces();
             currentPlayer = playerList[0];
             SpawnPaths();
            // DisableOpponentCP();
@@ -37,21 +36,20 @@ namespace shogi
                 }
             }
         }
-        private void SpawnPieces(Player player)
+        private void SpawnPieces()
         {
             //TODO: Initialize all the chesspieces on the board
-            if (player.Equals(playerList[0]))
-            {
-                //Board.setChessPiece(new Point(5, 9) , new Gyukusho(new Point(1, 1), player));
-                Board.setChessPiece(new Hisha(new Point(4, 2), player));
-                Board.setChessPiece(new Hisha(new Point(4, 7), player));
-
-            }
-            else
-            {
-                Board.setChessPiece(new Hisha(new Point(7, 7), playerList[1]));
-                Board.setChessPiece(new Hisha(new Point(2, 3), playerList[1]));
-            }
+            //==============================
+            //First Player
+            //==============================
+            Board.setChessPiece(new Gyukusho(new Point(5, 9), playerList[0]));
+            Board.setChessPiece(new Hisha(new Point(4, 7), playerList[0]));
+            //==============================
+            //Second Player
+            //==============================
+            Board.setChessPiece(new Gyukusho(new Point(5, 1), playerList[1]));
+            Board.setChessPiece(new Hisha(new Point(2, 3), playerList[1]));
+            
 
 
         }

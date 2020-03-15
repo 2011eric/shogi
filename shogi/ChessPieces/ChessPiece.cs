@@ -21,7 +21,7 @@ namespace shogi
 
         public List<Point> possibleMove = new List<Point>();
 
-        Image cpImage = global::shogi.Properties.Resources.Ginsho;
+        protected Image cpImage = global::shogi.Properties.Resources.Shogi_fuhyo;
 
         public ChessPiece(Point init,Player player, ChessPieceType defaultType, ChessPieceType upgradeType) {
             this.player = player;
@@ -52,7 +52,7 @@ namespace shogi
         {
             this.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             this.BackColor = System.Drawing.Color.Transparent;
-            
+            getCorrespondentImg();
             //rotate the image if the player is the enemy
             if (this.player.playerEnum == PlayerEnum.Second) cpImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             this.BackgroundImage = cpImage;
@@ -146,5 +146,19 @@ namespace shogi
         public abstract void RefreshPosibleMove(Point point);
         //The above method should only be called once after the cp was moved or every round of the game
 
+        private void getCorrespondentImg()
+        {
+            Image image = Properties.Resources.Shogi_fuhyo;
+            switch (currentType)
+            {
+                case ChessPieceType.Gyukusho:
+                    image = Properties.Resources.Shogi_gyokusho;
+                    break;
+                default:
+                    image = Properties.Resources.Shogi_hisha;
+                    break;
+            }
+            cpImage = image;
+        }
     }
 }
