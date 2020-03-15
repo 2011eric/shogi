@@ -10,7 +10,7 @@ namespace shogi.ChessPieces
     class Gyukusho : ChessPiece
     {
         private Point[] move;
-        public Gyukusho(Point init, string player) : base(init, player, ChessPieceType.Gyukusho)
+        public Gyukusho(Point init, Player player) : base(init, player, ChessPieceType.Gyukusho)
         {
             
         }
