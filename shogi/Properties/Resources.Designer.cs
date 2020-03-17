@@ -73,6 +73,16 @@ namespace shogi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Shogi_fuhyo_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_fuhyo_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Shogi_ginsho {
             get {
                 object obj = ResourceManager.GetObject("Shogi_ginsho", resourceCulture);
@@ -93,9 +103,29 @@ namespace shogi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Shogi_gyokusho_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_gyokusho_removebg_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Shogi_hisha {
             get {
                 object obj = ResourceManager.GetObject("Shogi_hisha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shogi_hisha_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Shogi_hisha_removebg_preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

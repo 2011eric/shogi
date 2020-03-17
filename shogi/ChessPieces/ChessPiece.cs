@@ -133,6 +133,8 @@ namespace shogi
             cpImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
             this.BackgroundImage = cpImage;
             this.Size = Board.sizeOfDeadCP;
+            this.Enabled = false;
+            this.Visible = false;
             canUpgrade = false;
             upgraded = false;
             dead = true;
@@ -165,13 +167,15 @@ namespace shogi
 
         private void getCorrespondentImg()
         {
-            Image image = Properties.Resources.Shogi_fuhyo;
+            Image image = Properties.Resources.Shogi_fuhyo_removebg_preview;
             switch (currentType)
             {
                 
                 case ChessPieceType.Gyukusho:   //Ding
+                    image = Properties.Resources.Shogi_gyokusho_removebg_preview;
                     break;
                 case ChessPieceType.Hisha:      //Fly Car
+                    image = Properties.Resources.Shogi_hisha_removebg_preview;
                     break;
                 case ChessPieceType.Kakugyo:    //Angle Walk
                     break;
@@ -201,7 +205,7 @@ namespace shogi
                 case ChessPieceType.Tokin:      //Soldier
                     break;
                 default:
-                    image = Properties.Resources.Shogi_hisha;
+                    
                     break;
                      
             }

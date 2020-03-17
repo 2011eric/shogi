@@ -109,7 +109,8 @@ namespace shogi
         {
             Point from = cp.board_point;       
             board[from.X, from.Y] = null;
-            //cp.kill(choosed.player);
+            
+            cp.kill(choosed.player);
         }
               
     }

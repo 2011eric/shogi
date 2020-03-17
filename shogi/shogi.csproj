@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Board.cs" />
     <Compile Include="BoardState.cs" />
-    <Compile Include="ChessPieces\ChessPiecesName.cs" />
     <Compile Include="ChessPieces\Gyukusho.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -112,10 +111,14 @@
     <None Include="Resources\棋盤.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\CP\Shogi_fuhyo-removebg-preview.png" />
     <Content Include="Resources\CP\Shogi_fuhyo.png" />
     <Content Include="Resources\CP\Shogi_ginsho.png" />
+    <Content Include="Resources\CP\Shogi_gyokusho-removebg-preview.png" />
     <Content Include="Resources\CP\Shogi_gyokusho.png" />
+    <Content Include="Resources\CP\Shogi_hisha-removebg-preview.png" />
     <Content Include="Resources\CP\Shogi_hisha.png" />
+    <Content Include="Resources\CP\Shogi_kakugyo-removebg-preview.png" />
     <Content Include="Resources\CP\Shogi_kakugyo.png" />
     <Content Include="Resources\CP\Shogi_keima.png" />
     <Content Include="Resources\CP\Shogi_kinsho.png" />

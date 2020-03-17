@@ -44,12 +44,12 @@ namespace shogi
             //First Player
             //==============================
             Board.setChessPiece(new Gyukusho(new Point(5, 9), playerList[0]));
-            Board.setChessPiece(new Hisha(new Point(4, 7), playerList[0]));
+            Board.setChessPiece(new Hisha(new Point(2, 8), playerList[0]));
             //==============================
             //Second Player
             //==============================
-            Board.setChessPiece(new Gyukusho(new Point(5, 2), playerList[1]));
-            Board.setChessPiece(new Hisha(new Point(2, 3), playerList[1]));
+            Board.setChessPiece(new Gyukusho(new Point(5,1), playerList[1]));
+            Board.setChessPiece(new Hisha(new Point(8, 2), playerList[1]));
             
 
 
