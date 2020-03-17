@@ -12,7 +12,7 @@ namespace shogi.ChessPieces
     {
         List<Point> upgradedMoves = new List<Point>();
 
-        public Hisha(Point init, Player player) : base(init, player, ChessPieceType.Hisha)
+        public Hisha(Point init, Player player) : base(init, player, ChessPieceType.Hisha, ChessPieceType.Ryuou)
         {
             
             for (int i = -1; i <= 1; i++)

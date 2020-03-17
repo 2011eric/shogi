@@ -83,8 +83,8 @@ namespace shogi
             Point from = cp.board_point;
             board[to.X, to.Y] = cp;
             cp.moveTo(to);
-            cp.dead = false;
-            cp.Size = sizeOfCP;
+            CheckForUpgrade(cp);
+            cp.upgrade();
             board[from.X, from.Y] = null;
             choosed = null;
             Game.HideAllPath(); 
@@ -100,6 +100,17 @@ namespace shogi
                 MoveCP(choosed, buffer);
             }
         }
+
+        public static void CheckForUpgrade(ChessPiece cp)
+        {
+            if (cp.player.playerEnum == PlayerEnum.First)
+            {
+                if (cp.board_point.Y <= 3) cp.canUpgrade = true;
+            }
+            else
+                if (cp.board_point.Y >= 7) cp.canUpgrade = true;
+        }
+
 
         static Point graveYard_0_starting_point = new Point(0, 0);
         static Point graveYard_1_starting_point = new Point(0, 0);

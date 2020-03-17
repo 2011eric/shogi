@@ -117,6 +117,10 @@ namespace shogi
             {
                 currentType = upgradeType;
                 upgraded = true;
+                getCorrespondentImg();
+                //rotate the image if the player is the enemy
+                if (this.player.playerEnum == PlayerEnum.Second) cpImage.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                this.BackgroundImage = cpImage;
             }
             return canUpgrade;
         }

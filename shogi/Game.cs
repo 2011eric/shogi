@@ -45,13 +45,19 @@ namespace shogi
             //==============================
             Board.setChessPiece(new Gyukusho(new Point(5, 9), playerList[0]));
             Board.setChessPiece(new Hisha(new Point(2, 8), playerList[0]));
-            for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 7), playerList[0]));
+            Board.setChessPiece(new Kinsho(new Point(4, 9), playerList[0]));
+            Board.setChessPiece(new Kinsho(new Point(6, 9), playerList[0]));
+            Board.setChessPiece(new Ginsho(new Point(3, 9), playerList[0]));
+           // for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 7), playerList[0]));
             //==============================
             //Second Player
             //==============================
             Board.setChessPiece(new Gyukusho(new Point(5,1), playerList[1]));
             Board.setChessPiece(new Hisha(new Point(8, 2), playerList[1]));
-            for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 3), playerList[1]));
+            Board.setChessPiece(new Kinsho(new Point(4, 1), playerList[1]));
+            Board.setChessPiece(new Kinsho(new Point(6, 1), playerList[1]));
+            Board.setChessPiece(new Ginsho(new Point(3, 1), playerList[1]));
+            //for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 3), playerList[1]));
 
 
 
