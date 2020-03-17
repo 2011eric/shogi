@@ -22,7 +22,7 @@ namespace shogi
 
         public List<Point> possibleMove = new List<Point>();
 
-        protected Image cpImage = global::shogi.Properties.Resources.Shogi_fuhyo;
+        protected Image cpImage = global::shogi.Properties.Resources.fuhyo;
 
         public ChessPiece(Point init,Player player, ChessPieceType defaultType, ChessPieceType upgradeType) {
             this.player = player;
@@ -167,42 +167,54 @@ namespace shogi
 
         private void getCorrespondentImg()
         {
-            Image image = Properties.Resources.Shogi_fuhyo_removebg_preview;
+            Image image = Properties.Resources.fuhyo;
             switch (currentType)
             {
                 
                 case ChessPieceType.Gyukusho:   //Ding
-                    image = Properties.Resources.Shogi_gyokusho_removebg_preview;
+                    image = Properties.Resources.gyokusho;
                     break;
                 case ChessPieceType.Hisha:      //Fly Car
-                    image = Properties.Resources.Shogi_hisha_removebg_preview;
+                    image = Properties.Resources.hisha;
                     break;
                 case ChessPieceType.Kakugyo:    //Angle Walk
+                    image = Properties.Resources.kakugyo;
                     break;
                 case ChessPieceType.Kinsho:     //Gold
+                    image = Properties.Resources.kinsho;
                     break;
                 case ChessPieceType.Ginsho:     //Silver
+                    image = Properties.Resources.ginsho;
                     break;
                 case ChessPieceType.Keima:      //Expensive horse
+                    image = Properties.Resources.keima;
                     break;
                 case ChessPieceType.Kyosha:     //Fragrant car
+                    image = Properties.Resources.kyosha;
                     break;
                 case ChessPieceType.Fuhyo:      //Soldier
+                    image = Properties.Resources.fuhyo;
                     break;
                 //==========
                 //upgraded type
                 //==========
                 case ChessPieceType.Ryuou:      //Fly Car
+                    image = Properties.Resources.ryuo;
                     break;
                 case ChessPieceType.Ryuuma:     //Angle Walk
+                    image = Properties.Resources.ryuma;
                     break;
                 case ChessPieceType.Narigin:    //Silver
+                    image = Properties.Resources.narigin;
                     break;
                 case ChessPieceType.Narikei:    //Expensive horse
+                    image = Properties.Resources.narikei;
                     break;
                 case ChessPieceType.Narikyou:   //Fragrant car
+                    image = Properties.Resources.narikyo;
                     break;
                 case ChessPieceType.Tokin:      //Soldier
+                    image = Properties.Resources.tokin;
                     break;
                 default:
                     

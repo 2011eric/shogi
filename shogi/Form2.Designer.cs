@@ -60,7 +60,7 @@ namespace shogi
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::shogi.Properties.Resources.Shogi_gyokusho_removebg_preview;
+            this.button1.Image = global::shogi.Properties.Resources.gyokusho;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.Location = new System.Drawing.Point(975, 338);
             this.button1.Name = "button1";
@@ -80,7 +80,7 @@ namespace shogi
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = global::shogi.Properties.Resources.Shogi_fuhyo_removebg_preview;
+            this.button2.Image = global::shogi.Properties.Resources.fuhyo;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.Location = new System.Drawing.Point(1045, 338);
             this.button2.Name = "button2";

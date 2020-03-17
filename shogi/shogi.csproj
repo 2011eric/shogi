@@ -48,6 +48,9 @@
   <ItemGroup>
     <Compile Include="Board.cs" />
     <Compile Include="BoardState.cs" />
+    <Compile Include="ChessPieces\Fuhyo.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ChessPieces\Gyukusho.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -111,6 +114,20 @@
     <None Include="Resources\棋盤.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\CPNoBg\fuhyo.png" />
+    <Content Include="Resources\CPNoBg\ginsho.png" />
+    <Content Include="Resources\CPNoBg\gyokusho.png" />
+    <Content Include="Resources\CPNoBg\hisha.png" />
+    <Content Include="Resources\CPNoBg\kakugyo.png" />
+    <Content Include="Resources\CPNoBg\keima.png" />
+    <Content Include="Resources\CPNoBg\kinsho.png" />
+    <Content Include="Resources\CPNoBg\kyosha.png" />
+    <Content Include="Resources\CPNoBg\narigin.png" />
+    <Content Include="Resources\CPNoBg\narikei.png" />
+    <Content Include="Resources\CPNoBg\narikyo.png" />
+    <Content Include="Resources\CPNoBg\ryuma.png" />
+    <Content Include="Resources\CPNoBg\ryuo.png" />
+    <Content Include="Resources\CPNoBg\tokin.png" />
     <Content Include="Resources\CP\Shogi_fuhyo-removebg-preview.png" />
     <Content Include="Resources\CP\Shogi_fuhyo.png" />
     <Content Include="Resources\CP\Shogi_ginsho.png" />
