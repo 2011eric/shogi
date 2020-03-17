@@ -45,6 +45,7 @@ namespace shogi
             //==============================
             Board.setChessPiece(new Gyukusho(new Point(5, 9), playerList[0]));
             Board.setChessPiece(new Hisha(new Point(2, 8), playerList[0]));
+            Board.setChessPiece(new Kakugyo(new Point(8, 8), playerList[0]));
             Board.setChessPiece(new Kinsho(new Point(4, 9), playerList[0]));
             Board.setChessPiece(new Kinsho(new Point(6, 9), playerList[0]));
             Board.setChessPiece(new Ginsho(new Point(3, 9), playerList[0]));
@@ -59,6 +60,7 @@ namespace shogi
             //==============================
             Board.setChessPiece(new Gyukusho(new Point(5,1), playerList[1]));
             Board.setChessPiece(new Hisha(new Point(8, 2), playerList[1]));
+            Board.setChessPiece(new Kakugyo(new Point(2, 2), playerList[1]));
             Board.setChessPiece(new Kinsho(new Point(4, 1), playerList[1]));
             Board.setChessPiece(new Kinsho(new Point(6, 1), playerList[1]));
             Board.setChessPiece(new Ginsho(new Point(3, 1), playerList[1]));
@@ -146,7 +148,8 @@ namespace shogi
                         Board.getPath(element).show();
                     else
                     {
-                        Board.getChessPiece(element).Enabled = true; ;
+                        Board.getChessPiece(element).Enabled = true;
+                        Board.getChessPiece(element).highlight();
                     }
                 }
             }
