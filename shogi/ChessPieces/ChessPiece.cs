@@ -109,6 +109,7 @@ namespace shogi
             return currentType;
         }
 
+        
         public bool upgrade()
         {
             if (!haveUpgrade) return false;

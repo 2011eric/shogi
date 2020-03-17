@@ -48,7 +48,12 @@ namespace shogi
             Board.setChessPiece(new Kinsho(new Point(4, 9), playerList[0]));
             Board.setChessPiece(new Kinsho(new Point(6, 9), playerList[0]));
             Board.setChessPiece(new Ginsho(new Point(3, 9), playerList[0]));
-           // for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 7), playerList[0]));
+            Board.setChessPiece(new Ginsho(new Point(7, 9), playerList[0]));
+            Board.setChessPiece(new Keima(new Point(2, 9), playerList[0]));
+            Board.setChessPiece(new Keima(new Point(8, 9), playerList[0]));
+            Board.setChessPiece(new Kyosha(new Point(1, 9), playerList[0]));
+            Board.setChessPiece(new Kyosha(new Point(9, 9), playerList[0]));
+            for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 7), playerList[0]));
             //==============================
             //Second Player
             //==============================
@@ -57,7 +62,12 @@ namespace shogi
             Board.setChessPiece(new Kinsho(new Point(4, 1), playerList[1]));
             Board.setChessPiece(new Kinsho(new Point(6, 1), playerList[1]));
             Board.setChessPiece(new Ginsho(new Point(3, 1), playerList[1]));
-            //for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 3), playerList[1]));
+            Board.setChessPiece(new Ginsho(new Point(7, 1), playerList[1]));
+            Board.setChessPiece(new Keima(new Point(2, 1), playerList[1]));
+            Board.setChessPiece(new Keima(new Point(8, 1), playerList[1]));
+            Board.setChessPiece(new Kyosha(new Point(1, 1), playerList[1]));
+            Board.setChessPiece(new Kyosha(new Point(9, 1), playerList[1]));
+            for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 3), playerList[1]));
 
 
 

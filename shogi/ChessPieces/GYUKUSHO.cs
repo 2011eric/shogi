@@ -30,10 +30,7 @@ namespace shogi.ChessPieces
                         {
                             result.Add(nextPoint);
                         }
-                        else
-                        {
-                            break;
-                        }
+                       
                     }
                 }
             }

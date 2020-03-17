@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Board.cs" />
     <Compile Include="BoardState.cs" />
+    <Compile Include="ChessPieces\Kyosha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChessPieces\Keima.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ChessPieces\Ginsho.cs">
       <SubType>Component</SubType>
     </Compile>

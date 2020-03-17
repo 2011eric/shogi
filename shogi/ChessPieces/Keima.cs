@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace shogi.ChessPieces
 {
-    public class Fuhyo : ChessPiece
+    public class Keima : ChessPiece
     {
-        public Fuhyo(Point init, Player player) : base(init, player, ChessPieceType.Fuhyo, ChessPieceType.Tokin)
+        public Keima(Point init, Player player) : base(init, player, ChessPieceType.Keima, ChessPieceType.Narikei)
         {
 
         }
@@ -19,7 +19,6 @@ namespace shogi.ChessPieces
             List<Point> buffer = new List<Point>();
             if (upgraded)
             {
-              
                 buffer.Add(new Point(board_point.X + 1, board_point.Y));
                 buffer.Add(new Point(board_point.X - 1, board_point.Y));
                 buffer.Add(new Point(board_point.X, board_point.Y + 1));
@@ -36,28 +35,28 @@ namespace shogi.ChessPieces
                     buffer.Add(new Point(board_point.X - 1, board_point.Y + 1));
                     buffer.Add(new Point(board_point.X + 1, board_point.Y + 1));
                 }
-
-                
             }
             else
             {
                 if (player.playerEnum == PlayerEnum.First)
                 {
-                    buffer.Add(new Point(board_point.X, board_point.Y - 1));
+                    buffer.Add(new Point(board_point.X - 1, board_point.Y - 2));
+                    buffer.Add(new Point(board_point.X + 1, board_point.Y - 2));
                 }
                 else
                 {
-                    buffer.Add(new Point(board_point.X , board_point.Y + 1));                  
+                    buffer.Add(new Point(board_point.X - 1, board_point.Y + 2));
+                    buffer.Add(new Point(board_point.X + 1, board_point.Y + 2));
                 }
-
             }
+
             foreach (Point p in buffer)
-                if (Board.CheckBorder(p))
+                if(Board.CheckBorder(p))
                     if (Board.moveLegal(p, player) != BoardState.MyCP && Board.moveLegal(p, player) != BoardState.EnemyCheckMate)
                         result.Add(p);
 
             possibleMove = result;
-
+            
         }
     }
 }

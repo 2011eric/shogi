@@ -103,6 +103,11 @@ namespace shogi
 
         public static void CheckForUpgrade(ChessPiece cp)
         {
+            if (cp.haveUpgrade == false)
+            {
+                cp.canUpgrade = false;
+                return;
+            }
             if (cp.player.playerEnum == PlayerEnum.First)
             {
                 if (cp.board_point.Y <= 3) cp.canUpgrade = true;
