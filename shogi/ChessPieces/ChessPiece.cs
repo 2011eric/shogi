@@ -148,6 +148,7 @@ namespace shogi
             canUpgrade = false;
             upgraded = false;
             dead = true;
+            if (currentType == ChessPieceType.Gyukusho) Game.GameOver();
         }
 
         public void highlight()

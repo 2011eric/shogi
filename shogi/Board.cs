@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 using static shogi.BoardState;
 namespace shogi
 {
@@ -23,28 +24,28 @@ namespace shogi
         public const int y_graveyard1 = 0;
         public const int y_graveyard2 = 400;
         public const int dy_graveyard1 = 80;
-        
+
 
         public static Point BoardToWorld(Point board_pos)
         {
             //This methot will turn board position to world position
             //e.g. (1,3) => (200, 400)
-            Point world_pos = new Point(0,0);
-            
+            Point world_pos = new Point(0, 0);
 
-            world_pos.X = (int)(board_starting_point.X - (board_pos.X -1) * x_unit);
+
+            world_pos.X = (int)(board_starting_point.X - (board_pos.X - 1) * x_unit);
             world_pos.Y = (int)(board_starting_point.Y + (board_pos.Y - 1) * y_unit);
             return world_pos;
         }
         public static bool CheckBorder(Point current)
         {
             //Check if chesspiece out of border
-            return (current.X > 0 && current.X < 10) ? ((current.Y > 0 && current.Y < 10) ?true:false): false;
+            return (current.X > 0 && current.X < 10) ? ((current.Y > 0 && current.Y < 10) ? true : false) : false;
         }
         public static ChessPiece getChessPiece(Point point)
         {
             //Get the chess piece by its position on the board
-            if(CheckBorder(point))
+            if (CheckBorder(point))
                 return board[point.X, point.Y];
             return null;
 
@@ -57,30 +58,30 @@ namespace shogi
 
         public static Path getPath(Point point)
         {
-            if(CheckBorder(point))
+            if (CheckBorder(point))
                 return path[point.X, point.Y];
             return null;
         }
 
 
-        public static bool CheckMate(Point point,ChessPiece target,Player player)
+        public static bool CheckMate(Point point, ChessPiece target, Player player)
         {
             //Input:The chessPiece and point to move at next step
             //TODO: Check if checkmate
             return false;
         }
-        public static BoardState moveLegal(Point point,Player player)
+        public static BoardState moveLegal(Point point, Player player)
         {
             ChessPiece target = getChessPiece(point);
-            if (target != null )//Check if current player lose the game because of this move.
+            if (target != null)//Check if current player lose the game because of this move.
             {
-                if (target.player.Equals(player))            
-                    return EnemyCP;                
-                else               
-                    return EnemyCP;                
+                if (target.player.Equals(player))
+                    return EnemyCP;
+                else
+                    return EnemyCP;
             }
-            else if (Board.CheckMate(point, getChessPiece(point), player))            
-                return EnemyCheckMate;            
+            else if (Board.CheckMate(point, getChessPiece(point), player))
+                return EnemyCheckMate;
             return Null;
         }
 
@@ -90,7 +91,12 @@ namespace shogi
             board[to.X, to.Y] = cp;
             cp.moveTo(to);
             CheckForUpgrade(cp);
-            cp.upgrade();
+            if (cp.canUpgrade && cp.haveUpgrade && !cp.upgraded)
+            {    
+                DialogResult result = MessageBox.Show("Do you want to upgrade?", "", System.Windows.Forms.MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes) cp.upgrade();    
+            }
+                //cp.upgrade();
             board[from.X, from.Y] = null;
             choosed = null;
             Game.HideAllPath();
@@ -130,14 +136,46 @@ namespace shogi
         static int graveYard_1_num = 0;
         public static void CPToGraveYard(ChessPiece cp)
         {
-            Point from = cp.board_point;       
+            Point from = cp.board_point;
             board[from.X, from.Y] = null;
-            
+
             cp.kill(choosed.player);
             cp.player.graveyard[(int)cp.defaultType]++;
-            System.Windows.Forms.MessageBox.Show(cp.player.playerEnum.ToString()+" "+cp.defaultType.ToString()+":"+cp.player.graveyard[(int)cp.defaultType]);
-            form_board.
+            System.Windows.Forms.MessageBox.Show(cp.player.playerEnum.ToString() + " " + cp.defaultType.ToString() + ":" + cp.player.graveyard[(int)cp.defaultType]);
+     
         }
-       
+        public static void showZoneOfInfluence()
+        {
+            foreach (Path p in path)
+            {
+                if (p != null)
+                {
+                    p.enemyPath = 0;
+                    p.myPath = 0;
+                }
+            }
+
+            foreach (ChessPiece cp in board)
+            {
+                if (cp != null)
+                {
+                    cp.RefreshPosibleMove();
+                    foreach (Point pt in cp.possibleMove)
+                    {
+                        if (pt != null)
+                        {
+                            if (cp.player.playerEnum == PlayerEnum.First) getPath(pt).myPath++;
+                            else getPath(pt).enemyPath++;
+                        }
+                    }
+                }
+            }
+
+            foreach (Path p in path)
+            {
+                if (p != null) p.zoneOfInfluence();
+            }
+        }
+    
     }
 }

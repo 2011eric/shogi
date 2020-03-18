@@ -13,6 +13,7 @@ namespace shogi
         static Player[] playerList = new Player[2];
         public static Player currentPlayer;
         public static int round = 0;
+        public static bool game_over = false;
         public Game()
         {
 
@@ -189,12 +190,21 @@ namespace shogi
 
         public static void Restart()
         {
+            game_over = false;
             ClearBoard();
             SpawnAllPieces();
             round = 0;
             currentPlayer = playerList[0];
             DisableOpponentCP();
             HideAllPath();
+        }
+
+        public static void GameOver()
+        {
+            game_over = true;
+            System.Windows.Forms.MessageBox.Show("Game Over, The Winner is " + currentPlayer.role);
+            Restart();
+            
         }
 
         public static void ClearBoard()

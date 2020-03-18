@@ -36,5 +36,8 @@ namespace shogi.ChessPieces
             }
             possibleMove = result;
         }
+        
     }
+
+    
 }

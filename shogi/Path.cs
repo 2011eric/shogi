@@ -48,11 +48,11 @@ namespace shogi
         public void zoneOfInfluence()
         {
             ChessPiece cp = Board.getChessPiece(this.pos);
-            Color color = Color.FromArgb(70, Color.Gray);
+            Color color = Color.FromArgb(150, Color.Gray);
             if (enemyPath == 0 && myPath == 0) ;
-            else if (enemyPath == myPath) color = Color.FromArgb(130, 149,0,255);
-            else if (enemyPath < myPath) color = Color.FromArgb(100, Color.Blue);
-            else color = Color.FromArgb(70, Color.Red);
+            else if (enemyPath == myPath) color = Color.FromArgb(150, 149,0,255);
+            else if (enemyPath < myPath) color = Color.FromArgb(150, Color.Blue);
+            else color = Color.FromArgb(150, Color.Red);
             if (cp == null)
             {
                 this.BackColor = color;
@@ -60,7 +60,7 @@ namespace shogi
             }
             else
             {
-                cp.BackColor = Color.FromArgb(45, color);
+                cp.BackColor = Color.FromArgb(80, color);
             }
         }
 
