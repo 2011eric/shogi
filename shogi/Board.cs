@@ -136,7 +136,7 @@ namespace shogi
             cp.kill(choosed.player);
             cp.player.graveyard[(int)cp.defaultType]++;
             System.Windows.Forms.MessageBox.Show(cp.player.playerEnum.ToString()+" "+cp.defaultType.ToString()+":"+cp.player.graveyard[(int)cp.defaultType]);
-            form_board.
+            
         }
        
     }
