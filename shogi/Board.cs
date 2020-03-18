@@ -87,7 +87,8 @@ namespace shogi
             cp.upgrade();
             board[from.X, from.Y] = null;
             choosed = null;
-            Game.HideAllPath(); 
+            Game.HideAllPath();
+            Game.deHighlightCP();
             Game.switchPlayer();
         }
 

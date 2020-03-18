@@ -19,6 +19,7 @@ namespace shogi
         public bool upgraded;
         public bool dead = false;
         public Point board_point;
+        static Color highLightColor = Color.FromArgb(30, Color.Red);
 
         public List<Point> possibleMove = new List<Point>();
 
@@ -147,7 +148,7 @@ namespace shogi
 
         public void highlight()
         {
-            this.BackColor = Color.FromArgb(70, Color.White) ;
+            this.BackColor =  highLightColor;
         }
         public void deHighlight()
         {

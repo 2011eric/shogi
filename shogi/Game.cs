@@ -137,7 +137,7 @@ namespace shogi
         public static void HighLightPath(List<Point> point)
         {
             if (point == null) return;
-
+            deHighlightCP();
             HideAllPath();
 
             foreach (Point element in point)
