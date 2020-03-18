@@ -13,12 +13,12 @@ namespace shogi
         public static ChessPiece[,] board = new ChessPiece[10, 10];
         public static Path[,] path = new Path[10, 10];
         public static int cpNum = 100;
-        public static Size sizeOfCP = new Size(67, 67);
+        public static Size sizeOfCP = new Size(68, 68);
         public static Size sizeOfDeadCP = new Size(30, 30);
         public static ChessPiece choosed = null;
         static Point board_starting_point = new Point(857, 30);
-        static double x_unit = 68.6;
-        static double y_unit = 69.6;
+        static double x_unit = 68.5;
+        static double y_unit = 69.5;
         public const int x_graveyard1 = 0;
         public const int x_graveyard2 = 500;
         public const int y_graveyard1 = 0;

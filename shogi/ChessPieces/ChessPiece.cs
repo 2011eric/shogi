@@ -62,7 +62,7 @@ namespace shogi
             this.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.FlatAppearance.BorderSize = 0;
             this.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, Color.White);
+            this.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, Color.LightGray);
             this.FlatStyle =FlatStyle.Flat;
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Location = Board.BoardToWorld(this.board_point);

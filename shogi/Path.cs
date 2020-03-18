@@ -36,7 +36,7 @@ namespace shogi
         }
 
         public void show() {
-            this.BackColor = Color.FromArgb(70, color);
+            this.BackColor = Color.FromArgb(85, color);
             this.Enabled = true;
             this.Visible = true;
         }

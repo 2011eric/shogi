@@ -36,10 +36,10 @@
             // btn_Start
             // 
             this.btn_Start.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Start.Location = new System.Drawing.Point(112, 321);
-            this.btn_Start.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Start.Location = new System.Drawing.Point(112, 357);
+            this.btn_Start.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Start.Name = "btn_Start";
-            this.btn_Start.Size = new System.Drawing.Size(231, 60);
+            this.btn_Start.Size = new System.Drawing.Size(231, 67);
             this.btn_Start.TabIndex = 0;
             this.btn_Start.Text = "switch";
             this.btn_Start.UseVisualStyleBackColor = true;
@@ -47,10 +47,10 @@
             // 
             // btn_Histroy
             // 
-            this.btn_Histroy.Location = new System.Drawing.Point(112, 444);
-            this.btn_Histroy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Histroy.Location = new System.Drawing.Point(112, 493);
+            this.btn_Histroy.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Histroy.Name = "btn_Histroy";
-            this.btn_Histroy.Size = new System.Drawing.Size(231, 60);
+            this.btn_Histroy.Size = new System.Drawing.Size(231, 67);
             this.btn_Histroy.TabIndex = 1;
             this.btn_Histroy.Text = "button2";
             this.btn_Histroy.UseVisualStyleBackColor = true;
@@ -58,23 +58,23 @@
             // lable_title
             // 
             this.lable_title.AutoSize = true;
-            this.lable_title.Font = new System.Drawing.Font("特太行書", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lable_title.Location = new System.Drawing.Point(80, 156);
+            this.lable_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable_title.Location = new System.Drawing.Point(80, 173);
             this.lable_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lable_title.Name = "lable_title";
-            this.lable_title.Size = new System.Drawing.Size(310, 49);
+            this.lable_title.Size = new System.Drawing.Size(312, 55);
             this.lable_title.TabIndex = 2;
             this.lable_title.Text = "廢到笑的將棋";
             // 
             // menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 594);
+            this.ClientSize = new System.Drawing.Size(452, 660);
             this.Controls.Add(this.lable_title);
             this.Controls.Add(this.btn_Histroy);
             this.Controls.Add(this.btn_Start);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "menu";
             this.Text = "Form1";
             this.ResumeLayout(false);
