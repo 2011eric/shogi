@@ -36,9 +36,11 @@ namespace shogi.ChessPieces
         {
             //TODO:Check if the path is blocked
             List<Point> result = new List<Point>();
+            Point nextPoint = new Point(point.X, point.Y);
             for (int i = 1; i < 10; i++)
             {
-                Point nextPoint = new Point(point.X + i, point.Y + i);
+                nextPoint.X = point.X + i;
+                nextPoint.Y = point.Y + i;
                 if (!Board.CheckBorder(nextPoint)) break;
                 else if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
@@ -50,9 +52,11 @@ namespace shogi.ChessPieces
                     break;
                 }
             }
+            nextPoint = new Point(point.X, point.Y);
             for (int i = 1; i < 10; i++)
             {
-                Point nextPoint = new Point(point.X + i, point.Y - i);
+                nextPoint.X = point.X + i;
+                nextPoint.Y = point.Y - i;
                 if (!Board.CheckBorder(nextPoint)) break;
                 else if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
@@ -64,9 +68,11 @@ namespace shogi.ChessPieces
                     break;
                 }
             }
+            nextPoint = new Point(point.X, point.Y);
             for (int i = 1; i < 10; i++)
             {
-                Point nextPoint = new Point(point.X - i, point.Y + i);
+                nextPoint.X = point.X - i;
+                nextPoint.Y = point.Y + i;
                 if (!Board.CheckBorder(nextPoint)) break;
                 else if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
@@ -78,9 +84,11 @@ namespace shogi.ChessPieces
                     break;
                 }
             }
+            nextPoint = new Point(point.X, point.Y);
             for (int i = 1; i < 10; i++)
             {
-                Point nextPoint = new Point(point.X - i, point.Y - i);
+                nextPoint.X = point.X - i;
+                nextPoint.Y = point.Y - i;
                 if (!Board.CheckBorder(nextPoint)) break;
                 else if (Board.moveLegal(nextPoint, this.player) != BoardState.MyCP)
                 {
@@ -96,7 +104,7 @@ namespace shogi.ChessPieces
             {
                 foreach (Point i in upgradedMoves)
                 {
-                    Point nextPoint = new Point(point.X + i.X, point.Y + i.Y);
+                    nextPoint = new Point(point.X + i.X, point.Y + i.Y);
 
                     if (Board.CheckBorder(nextPoint))
                     {

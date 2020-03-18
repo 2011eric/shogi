@@ -23,12 +23,12 @@ namespace shogi
             foreach (ChessPiece cp in Board.board)
             {
                 if (cp != null)
-                    this.picture_board.Controls.Add(cp);
+                    this.Controls.Add(cp);
             }
             foreach (Path path in Board.path){
                 if (path != null)
                 {
-                    this.picture_board.Controls.Add(path);
+                    this.Controls.Add(path);
                 }
             }
            
@@ -51,7 +51,16 @@ namespace shogi
 
         }
 
-      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Game.Restart();
+            foreach (ChessPiece cp in Board.board)
+            {
+                if (cp != null)
+                    this.Controls.Add(cp);
+            }
+            
+        }
     }
     
 }

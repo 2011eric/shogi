@@ -37,7 +37,7 @@ namespace shogi
                 }
             }
         }
-        private void SpawnAllPieces()
+        private static void SpawnAllPieces()
         {
             //TODO: Initialize all the chesspieces on the board
             //==============================
@@ -70,12 +70,9 @@ namespace shogi
             Board.setChessPiece(new Kyosha(new Point(1, 1), playerList[1]));
             Board.setChessPiece(new Kyosha(new Point(9, 1), playerList[1]));
             for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 3), playerList[1]));
-
-
-
         }
 
-        private void SpawnPieces(ChessPieceType type, Player player)
+        private void SpawnPieces(ChessPieceType type, Player player, Point point)
         {
             ChessPiece cp;
             switch (type){
@@ -185,6 +182,29 @@ namespace shogi
             }
 
 
+        }
+
+        public static void Restart()
+        {
+            ClearBoard();
+            SpawnAllPieces();
+            round = 0;
+            currentPlayer = playerList[0];
+            DisableOpponentCP();
+            HideAllPath();
+        }
+
+        public static void ClearBoard()
+        {
+            foreach (ChessPiece cp in Board.board)
+            {
+                if(cp != null)
+                {
+                    cp.Enabled = false;
+                    cp.Visible = false;
+                }
+            }
+            Board.board = new ChessPiece[10, 10];
         }
 
 
