@@ -94,14 +94,18 @@ namespace shogi
         {
             if (Board.choosed == null || Board.choosed.player == this.player)
             {
+                Game.DisableOpponentCP();
                 if (!dead)
                     RefreshPosibleMove(this.board_point);
                 else RefreshPossibleMoveDead();
                 Board.choosed = this;
                 Game.HighLightPath(possibleMove);
             }
-            else Board.KillCP(this);
-            
+            else
+            {
+               // foreach(ChessPiece )
+                Board.KillCP(this);
+            }
             //highlight();
         }
 

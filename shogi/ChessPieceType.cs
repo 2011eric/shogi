@@ -2,14 +2,14 @@
 {
    public enum ChessPieceType
     {
-        Gyukusho, // King
-        Hisha,       //FLy car
-        Kakugyo,  //Angle walk
-        Kinsho,    //Gold
-        Ginsho,    //Silver  
-        Keima,      //Expensive horse
-        Kyosha,     //Fragrant car
-        Fuhyo,      //Soldier
+        Gyukusho = 0 , // King
+        Hisha = 1,       //FLy car
+        Kakugyo = 2 ,  //Angle walk
+        Kinsho = 3 ,    //Gold
+        Ginsho = 4 ,    //Silver  
+        Keima = 5 ,      //Expensive horse
+        Kyosha = 6,     //Fragrant car
+        Fuhyo = 7,      //Soldier
 
         //upgrade
         Ryuou,      //Fly car

@@ -17,7 +17,7 @@ namespace shogi
         public string role;
         public PlayerEnum playerEnum;
         public static int playerNum = 0;
-        private ChessPiece[] piecesDead;
+        public int[] graveyard = new int[8] ;
 
         public Player(string role)
         {

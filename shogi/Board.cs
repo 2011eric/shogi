@@ -18,6 +18,12 @@ namespace shogi
         static Point board_starting_point = new Point(857, 30);
         static double x_unit = 68.6;
         static double y_unit = 69.6;
+        public const int x_graveyard1 = 0;
+        public const int x_graveyard2 = 500;
+        public const int y_graveyard1 = 0;
+        public const int y_graveyard2 = 400;
+        public const int dy_graveyard1 = 80;
+        
 
         public static Point BoardToWorld(Point board_pos)
         {
@@ -128,7 +134,10 @@ namespace shogi
             board[from.X, from.Y] = null;
             
             cp.kill(choosed.player);
+            cp.player.graveyard[(int)cp.defaultType]++;
+            System.Windows.Forms.MessageBox.Show(cp.player.playerEnum.ToString()+" "+cp.defaultType.ToString()+":"+cp.player.graveyard[(int)cp.defaultType]);
+            form_board.
         }
-              
+       
     }
 }
