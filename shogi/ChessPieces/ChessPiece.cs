@@ -96,7 +96,7 @@ namespace shogi
             {
                 Game.DisableOpponentCP();
                 if (!dead)
-                    RefreshPosibleMove(this.board_point);
+                    RefreshPosibleMove();
                 else RefreshPossibleMoveDead();
                 Board.choosed = this;
                 Game.HighLightPath(possibleMove);
@@ -161,6 +161,11 @@ namespace shogi
 
         public abstract void RefreshPosibleMove(Point point);
         //The above method should only be called once after the cp was moved or every round of the game
+
+        public void RefreshPosibleMove()
+        {
+            RefreshPosibleMove(this.board_point);
+        }
 
         public void RefreshPossibleMoveDead()
         {

@@ -141,12 +141,15 @@ namespace shogi
             {
                 if (point != null)
                 {
-                    if(Board.getChessPiece(element) == null)
+                    if (Board.getChessPiece(element) == null)
                         Board.getPath(element).show();
                     else
                     {
+                        ChessPiece cp = Board.getChessPiece(element);
+                        if (cp.player.playerEnum != currentPlayer.playerEnum) { 
                         Board.getChessPiece(element).Enabled = true;
                         Board.getChessPiece(element).highlight();
+                        }
                     }
                 }
             }

@@ -26,6 +26,7 @@ namespace shogi
         }
         private void gameClosed(object sender, FormClosedEventArgs e)
         {
+            
             this.Show();
         }
     }

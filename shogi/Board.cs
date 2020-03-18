@@ -75,7 +75,7 @@ namespace shogi
             if (target != null )//Check if current player lose the game because of this move.
             {
                 if (target.player.Equals(player))            
-                    return MyCP;                
+                    return EnemyCP;                
                 else               
                     return EnemyCP;                
             }
@@ -136,7 +136,40 @@ namespace shogi
             cp.kill(choosed.player);
             cp.player.graveyard[(int)cp.defaultType]++;
             System.Windows.Forms.MessageBox.Show(cp.player.playerEnum.ToString()+" "+cp.defaultType.ToString()+":"+cp.player.graveyard[(int)cp.defaultType]);
-            form_board.
+            //form_board.
+        }
+
+        public static void showZoneOfInfluence()
+        {
+            foreach (Path p in path)
+            {
+                if (p != null)
+                {
+                    p.enemyPath = 0;
+                    p.myPath = 0;
+                }
+            }
+
+            foreach (ChessPiece cp in board)
+            {
+                if(cp != null)
+                {
+                    cp.RefreshPosibleMove();
+                    foreach(Point pt in cp.possibleMove)
+                    {
+                        if(pt != null)
+                        {
+                            if (cp.player.playerEnum == PlayerEnum.First) getPath(pt).myPath++;
+                            else getPath(pt).enemyPath++;
+                        }
+                    }
+                }
+            }
+
+            foreach(Path p in path)
+            {
+                if (p != null) p.zoneOfInfluence();
+            }
         }
        
     }

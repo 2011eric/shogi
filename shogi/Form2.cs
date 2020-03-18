@@ -20,18 +20,18 @@ namespace shogi
             InitializeComponent();
 
             // Hisha hisha1 = new Hisha(new Point(6, 1), "ih");
-            foreach (ChessPiece cp in Board.board)
-            {
-                if (cp != null)
-                    this.Controls.Add(cp);
-            }
+          
             foreach (Path path in Board.path){
                 if (path != null)
                 {
                     this.Controls.Add(path);
                 }
             }
-           
+             foreach (ChessPiece cp in Board.board)
+            {
+                if (cp != null)
+                    this.Controls.Add(cp);
+            }
 
 
             
@@ -60,6 +60,11 @@ namespace shogi
                     this.Controls.Add(cp);
             }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Board.showZoneOfInfluence();
         }
     }
     

@@ -32,6 +32,7 @@ namespace shogi
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -43,6 +44,16 @@ namespace shogi
             this.button1.Text = "Restart";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(966, 87);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(201, 66);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Zone Of Influence";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // form_board
             // 
@@ -61,8 +72,8 @@ namespace shogi
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.form_board_Load);
             this.ResumeLayout(false);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-
         }
 
         private void form_board_Load(object sender, EventArgs e)
@@ -77,5 +88,6 @@ namespace shogi
         #endregion
 
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
