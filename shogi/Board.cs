@@ -19,11 +19,7 @@ namespace shogi
         static Point board_starting_point = new Point(857, 30);
         static double x_unit = 68.5;
         static double y_unit = 69.5;
-        public const int x_graveyard1 = 0;
-        public const int x_graveyard2 = 500;
-        public const int y_graveyard1 = 0;
-        public const int y_graveyard2 = 400;
-        public const int dy_graveyard1 = 80;
+       
 
 
         public static Point BoardToWorld(Point board_pos)
@@ -96,6 +92,7 @@ namespace shogi
                 DialogResult result = MessageBox.Show("Do you want to upgrade?", "", System.Windows.Forms.MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes) cp.upgrade();    
             }
+            Game.soundPlayer.Play();
                 //cp.upgrade();
             board[from.X, from.Y] = null;
             choosed = null;

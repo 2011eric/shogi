@@ -89,7 +89,9 @@
     <Compile Include="ChessPieces\ChessPiece.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GraveYard.cs" />
+    <Compile Include="GraveYard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Path.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -161,6 +163,9 @@
     <Content Include="Resources\CP\Shogi_ryuma.png" />
     <Content Include="Resources\CP\Shogi_ryuo.png" />
     <Content Include="Resources\CP\Shogi_tokin.png" />
+    <None Include="Resources\sound_move.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

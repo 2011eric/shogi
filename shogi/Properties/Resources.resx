@@ -124,9 +124,6 @@
   <data name="棋盤1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\棋盤.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fuhyo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CPNoBg\fuhyo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ginsho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CPNoBg\ginsho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,5 +162,11 @@
   </data>
   <data name="tokin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CPNoBg\tokin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fuhyo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CPNoBg\fuhyo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sound_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_move.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

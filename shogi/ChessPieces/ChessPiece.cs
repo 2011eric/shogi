@@ -73,21 +73,7 @@ namespace shogi
             Board.cpNum++;
             this.UseVisualStyleBackColor = false;
             this.Click += new System.EventHandler(this.Button_Click);
-            /*
-            BackColor = System.Drawing.Color.Transparent;
-            Image cpImage = global::shogi.Properties.Resources.Ginsho;
-            BackgroundImage = cpImage;
-            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            ForeColor = System.Drawing.Color.Transparent;
-            Location = new System.Drawing.Point(516, 21);
-            Name = "button2";
-            Size = new System.Drawing.Size(68, 68);
-            TabIndex = 8;
-            TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            UseVisualStyleBackColor = false;
-            Click += new System.EventHandler(this.Button_Click);
-            */
+           
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -103,7 +89,7 @@ namespace shogi
             }
             else
             {
-               // foreach(ChessPiece )
+      
                 Board.KillCP(this);
             }
             //highlight();

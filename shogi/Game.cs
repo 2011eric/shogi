@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using shogi.ChessPieces;
-
+using System.Media;
 namespace shogi
 {
     public class Game
@@ -14,6 +14,8 @@ namespace shogi
         public static Player currentPlayer;
         public static int round = 0;
         public static bool game_over = false;
+        public static SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.sound_move);
+
         public Game()
         {
 
@@ -23,7 +25,9 @@ namespace shogi
             SpawnAllPieces();
             currentPlayer = playerList[0];
             SpawnPaths();
-
+            
+            soundPlayer.LoadAsync();
+            
             DisableOpponentCP();
             
         }
@@ -192,11 +196,14 @@ namespace shogi
         {
             game_over = false;
             ClearBoard();
+            playerList[0] = new Player("first");
+            playerList[1] = new Player("second");
             SpawnAllPieces();
             round = 0;
             currentPlayer = playerList[0];
             DisableOpponentCP();
             HideAllPath();
+            
         }
 
         public static void GameOver()
@@ -205,6 +212,18 @@ namespace shogi
             System.Windows.Forms.MessageBox.Show("Game Over, The Winner is " + currentPlayer.role);
             Restart();
             
+        }
+
+        public static void DrawGraveYard(Player first, Player second)
+        {
+            foreach (int numOfCP in first.graveyard)
+            {
+                if (numOfCP > 0)
+                {
+
+                }
+            }
+
         }
 
         public static void ClearBoard()
