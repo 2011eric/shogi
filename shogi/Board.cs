@@ -83,6 +83,7 @@ namespace shogi
 
         public static void MoveCP(ChessPiece cp, Point to)
         {
+            Game.soundPlayer.Play();
             Point from = cp.board_point;
             board[to.X, to.Y] = cp;
             cp.moveTo(to);
@@ -92,7 +93,7 @@ namespace shogi
                 DialogResult result = MessageBox.Show("Do you want to upgrade?", "", System.Windows.Forms.MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes) cp.upgrade();    
             }
-            Game.soundPlayer.Play();
+            
                 //cp.upgrade();
             board[from.X, from.Y] = null;
             choosed = null;
