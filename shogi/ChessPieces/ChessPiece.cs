@@ -78,6 +78,18 @@ namespace shogi
 
         private void Button_Click(object sender, EventArgs e)
         {
+            if (Board.choosed != null)
+            {
+                try
+                {
+                    ChessPiece choosed = (ChessPiece)Board.choosed;
+                }
+                catch (Exception)
+                {
+                    GraveYardItem choosed = (GraveYardItem)Board.choosed;
+                    
+                }
+            }
             if (Board.choosed == null || Board.choosed.player == this.player)
             {
                 Game.DisableOpponentCP();
@@ -148,12 +160,11 @@ namespace shogi
 
         public abstract void RefreshPosibleMove(Point point);
         //The above method should only be called once after the cp was moved or every round of the game
-
         public void RefreshPosibleMove()
         {
             RefreshPosibleMove(this.board_point);
         }
-
+        
         public void RefreshPossibleMoveDead()
         {
             List<Point> result = new List<Point>();
