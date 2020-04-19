@@ -19,8 +19,8 @@ namespace shogi
         static Point board_starting_point = new Point(857, 30);
         static double x_unit = 68.5;
         static double y_unit = 69.5;
-       
-
+        public static List<GraveYardItem> graveYard1 = new List<GraveYardItem>();
+        public static List<GraveYardItem> graveYard2 = new List<GraveYardItem>();
 
         public static Point BoardToWorld(Point board_pos)
         {
@@ -58,7 +58,18 @@ namespace shogi
                 return path[point.X, point.Y];
             return null;
         }
+        public static void addGraveYard(GraveYardItem item)
+        {
+            if (item.playerindex == 1)
+            {
+                graveYard1.Add(item);
+            }
+            else
+            {
+                graveYard2.Add(item);
+            }
 
+        }
 
         public static bool CheckMate(Point point, ChessPiece target, Player player)
         {
@@ -100,7 +111,9 @@ namespace shogi
             Game.deHighlightCP();
             Game.switchPlayer();
         }
-
+        public static void DeployCP(ChessPiece cp, Point to) {
+            MessageBox.Show(cp.player + "deploy to " + to.X + "," + to.Y);
+        }
         public static void KillCP(ChessPiece deadman)
         {
             if (choosed != null)
@@ -139,7 +152,7 @@ namespace shogi
             cp.kill(choosed.player);
             cp.player.graveyard[(int)cp.defaultType]++;
             System.Windows.Forms.MessageBox.Show(cp.player.playerEnum.ToString() + " " + cp.defaultType.ToString() + ":" + cp.player.graveyard[(int)cp.defaultType]);
-     
+            //form_board.refreshGraveYard();
         }
         public static void showZoneOfInfluence()
         {
