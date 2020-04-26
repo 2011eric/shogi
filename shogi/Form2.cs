@@ -28,7 +28,7 @@ namespace shogi
                 }
             }
             showCP();
-
+            registerGraveYard();
 
             
             /*
@@ -46,7 +46,16 @@ namespace shogi
 
 
         }
-
+        public void registerGraveYard() {
+           foreach(GraveYardItem item in Board.graveYard1)
+            {
+                this.Controls.Add(item);
+            }
+           foreach(GraveYardItem item in Board.graveYard2)
+            {
+                this.Controls.Add(item);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Game.Restart();

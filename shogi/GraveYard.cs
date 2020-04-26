@@ -15,7 +15,6 @@ namespace shogi
         private static int x_graveyard2 = 10;
         private static int y_graveyard1 = 330;
         private static int y_graveyard2 = 10;
-        public Player player { get; set; };
         public int playerindex { get; }
         private ChessPieceType type;
         private int numOfCP;
@@ -31,7 +30,6 @@ namespace shogi
             this.initItem();
             this.getCorrespondentImg();
             if (playerindex == 2) this.image.RotateFlip(RotateFlipType.Rotate180FlipNone);
-            
         }
         private void initItem()
         {
@@ -89,7 +87,7 @@ namespace shogi
             cp = new ChessPiece() 
             Board.DeployCP();*/
         }
-        private  void RefreshPossibleMoves()
+        private List<Point> refreshPossibleMoves()
         {
             List<Point> possiblePos = new List<Point>();
             switch (this.type)

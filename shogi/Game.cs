@@ -23,6 +23,7 @@ namespace shogi
             playerList[0] = new Player("first");
             playerList[1] = new Player("second");
             SpawnAllPieces();
+            SpawnGraveYard();
             currentPlayer = playerList[0];
             SpawnPaths();
             
@@ -76,29 +77,21 @@ namespace shogi
             Board.setChessPiece(new Kyosha(new Point(9, 1), playerList[1]));
             for (int i = 1; i <= 9; i++) Board.setChessPiece(new Fuhyo(new Point(i, 3), playerList[1]));
         }
-
-        private void SpawnPieces(ChessPieceType type, Player player, Point point)
+        private void SpawnGraveYard()
         {
-            ChessPiece cp;
-            switch (type){
-                case ChessPieceType.Gyukusho:
-                    break;
-                case ChessPieceType.Hisha:
-                    break;
-                case ChessPieceType.Kakugyo:
-                    break;
-                case ChessPieceType.Kinsho:
-                    break;
-                case ChessPieceType.Ginsho:
-                    break;
-                case ChessPieceType.Keima:
-                    break;
-                case ChessPieceType.Kyosha:
-                    break;
-                case ChessPieceType.Fuhyo:
-                    break;
+            for (int i = 1; i <= 2; i++)
+            {
+                Board.addGraveYard(new GraveYardItem(i, ChessPieceType.Hisha, 0, 0));
+                Board.addGraveYard(new GraveYardItem(i, ChessPieceType.Kakugyo, 1, 0));
+                Board.addGraveYard(new GraveYardItem(i, ChessPieceType.Kinsho, 2, 0));
+                Board.addGraveYard(new GraveYardItem(i, ChessPieceType.Ginsho, 3, 0));
+                Board.addGraveYard(new GraveYardItem(i, ChessPieceType.Keima, 4, 0));
+                Board.addGraveYard(new GraveYardItem(i, ChessPieceType.Kyosha, 5, 0));
+                Board.addGraveYard(new GraveYardItem(i, ChessPieceType.Fuhyo, 6, 0));
             }
         }
+           
+        
         public void Start()
         {
             while (true)
@@ -188,6 +181,22 @@ namespace shogi
                     else cp.Enabled = false;
                 }
             }
+            if (currentPlayer.role == "first")
+            {
+                foreach (GraveYardItem item in Board.graveYard2)
+                {
+                    item.Enabled = false;
+                }
+            }
+            else
+            {
+                foreach(GraveYardItem item in Board.graveYard1)
+                {
+                    item.Enabled = false;
+                }
+            }
+            
+            
 
 
         }
@@ -214,17 +223,7 @@ namespace shogi
             
         }
 
-        public static void DrawGraveYard(Player first, Player second)
-        {
-            foreach (int numOfCP in first.graveyard)
-            {
-                if (numOfCP > 0)
-                {
 
-                }
-            }
-
-        }
 
         public static void ClearBoard()
         {
